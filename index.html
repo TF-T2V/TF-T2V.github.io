@@ -1,0 +1,2789 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>TF-T2V</title>
+
+	<link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.min.css" /> 
+	<script src="bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="https://gw.alicdn.com/imgextra/i3/O1CN01n9wUIv26XN415nWwN_!!6000000007671-0-tps-703-704.jpg">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" />     -->
+	<link href="css/templatemo-style.css" rel="stylesheet" />
+	<link href="css/new-style.css" rel="stylesheet" />
+	<link href="css/two_style.css" rel="stylesheet" />
+
+</head>
+
+<body> 
+
+	<div class="container">
+		<div class="placeholder">
+			<!-- <div class="parallax-window" data-parallax="scroll" data-image-src="https://img.alicdn.com/imgextra/i4/O1CN01VU761M1c6PL5Uzmrv_!!6000000003551-2-tps-1280-720.png"> -->
+			<div class="parallax-window" data-parallax="scroll">
+				<div class="tm-header">
+					<div class="row tm-header-inner">
+						<div class="col-md-6 col-12" style="display: inline-flex;">
+							<img src="https://gw.alicdn.com/imgextra/i3/O1CN01Dko8nq1a3XZ41bOe8_!!6000000003274-2-tps-60-60.png" alt="Logo" class="tm-site-logo" /> 
+							<div class="tm-site-text-box">
+								<!-- <h1 class="tm-site-title" style="height: 1rem;">as</h1> -->
+								<h1 class="tm-site-title">TF-T2V</h1>
+								<h6 class="tm-site-description"> Versatile technology for video content creation.</h6>	
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- <div class="placeholder-content">
+					<img src="https://gw.alicdn.com/imgextra/i3/O1CN01Dko8nq1a3XZ41bOe8_!!6000000003274-2-tps-60-60.png" alt="Logo" class="tm-site-logo" /> 
+					<div class="tm-site-text-box">
+						<h1 class="tm-site-title">TF-T2V</h1>
+						<h6 class="tm-site-description"> Versatile technology for video content creation.</h6>	
+					</div>
+				</div> -->
+			</div>
+			<!-- </div> -->
+		</div>
+
+		<main>
+			<header class="row tm-welcome-section">
+				<h2 class="col-12 text-center tm-section-title">A Recipe for Scaling up Text-to-Video Generation <br/> with Text-free Videos</h2>
+				<p class="col-12 text-center author-section">
+					<a class="author-section-a" href="#">Xiang Wang<sup>1</sup></a>, 
+					<a class="author-section-a" href="#">Shiwei Zhang<sup>2</sup></a>,
+					<a class="author-section-a" href="#">Hangjie Yuan<sup>3</sup></a>,
+					<a class="author-section-a" href="#">Zhiwu Qing<sup>1</sup></a>,
+					<a class="author-section-a" href="#">Biao Gong<sup>2</sup></a>,
+					<a class="author-section-a" href="#">Yingya Zhang<sup>2</sup></a>,
+					<br/>
+					<a class="author-section-a" href="#">Yujun Shen<sup>4</sup></a>,
+					<a class="author-section-a" href="#">Changxin Gao<sup>1</sup></a>,
+					<a class="author-section-a" href="#">Nong Sang<sup>1</sup></a>
+				</p>
+				
+				<p class="col-12 text-center affiliation-section">
+					<a class="author-section-a"><sup>1</sup>Huazhong University of Science and Technology</a>, 
+					<a class="author-section-a"><sup>2</sup>Alibaba Group</a>,
+					<a class="author-section-a"><sup>3</sup>Zhejiang University</a>,
+					<a class="author-section-a"><sup>4</sup>Ant Group</a>
+				</p>
+
+				<img src="https://img.alicdn.com/imgextra/i1/O1CN01p6Wgav1JInLsoDJGN_!!6000000001006-0-tps-2034-1268.jpg" alt="Logo" class="tm-site-logo" /> 
+
+				<p class="col-12 text-center abstract-section" style="word-break:break-all;word-wrap:break-word">
+					Diffusion-based text-to-video generation has witnessed impressive progress in the past year yet still falls behind text-to-image generation. One of the key reasons is the
+					limited scale of publicly available data (e.g., 10M video-
+					text pairs in WebVid10M vs. 5B image-text pairs in LAION),
+					considering the high cost of video captioning. Instead, it
+					could be far easier to collect unlabeled clips from video
+					platforms like YouTube. Motivated by this, we come up with a novel text-to-video generation framework, termed
+					TF-T2V, which can directly learn with text-free videos.
+					The rationale behind is to separate the process of text
+					decoding from that of temporal modeling. To this end, we
+					employ a content branch and a motion branch, which are
+					jointly optimized with weights shared. Following such a pipeline, we study the effect of doubling the scale of training set (i.e., video-only WebVid10M) with some randomly
+					collected text-free videos and are encouraged to observe
+					the performance improvement (FID from 9.67 to 8.19 and
+					FVD from 484 to 441), demonstrating the scalability of our approach. We also find that our model could enjoy
+					sustainable performance gain (FID from 8.19 to 7.64 and
+					FVD from 441 to 366) after reintroducing some text labels
+					for training. Finally, we validate the effectiveness and
+					generalizability of our ideology on both native text-to-video
+					generation and compositional video synthesis paradigms.
+					Code and models will be made public.
+				</p>
+				<img src="https://img.alicdn.com/imgextra/i4/O1CN010lcFy221ayA4BcS1U_!!6000000007002-0-tps-2236-836.jpg" alt="Logo" class="tm-site-logo" /> 
+				
+			</header>
+			
+			<div class="tm-paging-links" style="margin-bottom: 1rem;">
+				<nav>
+					<ul>
+						<!-- <li class="tm-paging-item"><a class="sw_style_link active" href="https://arxiv.org/abs/2306.02018">Paper</a></li> -->
+						<li class="tm-paging-item"><a class="sw_style_link" href="https://arxiv.org/abs/2306.02018">Paper</a></li>
+						<li class="tm-paging-item"><a class="sw_style_link" href="https://github.com/damo-vilab/videocomposer">Code</a></li>
+						<!-- <li class="tm-paging-item"><a class="sw_style_link" href="https://www.modelscope.cn/models/damo/VideoComposer/summary">Models</a></li> -->
+					</ul>
+				</nav>
+			</div>
+		
+
+			<!-- <p class="col-12 text-center abstract-section tm-paging-links" style="word-break:break-all;word-wrap:break-word; color: lightseagreen;">
+				We are currently seeking research interns. If you are interested in video generation, please do not hesitate to email <br \> us your resume at the following address:
+				<a style="color: lightseagreen; font-size: 1.2rem; font-weight: bold"> zhangjin.zsw@alibaba-inc.com </a>
+			</p> -->
+
+			<!-- <div class="gray_div font-serif rw-r-container">
+				<div class="text-2xl lg:text-4xl leading-none pb-2 text-center">
+					Framework: <i>Overview of the pipeline</i>
+				</div>
+                <div class=""></div>
+				<img src="https://img.alicdn.com/imgextra/i4/O1CN010lcFy221ayA4BcS1U_!!6000000007002-0-tps-2236-836.jpg" alt="Logo" class="tm-site-logo" /> 
+			    </div>
+				 <div class="text-base lg:text-lg pb-5 mb-6 text-center"> -->
+					<!-- Synthesize videos in any style you can imagine using nothing but a text prompt. If you can say it, now you can see it. -->
+					<!-- You can generate videos flexibly in any style that you can imagine. -->
+					<!-- The real source of art is your imagination, and TF-T2V is the solution for bringing it to life.
+				</div> -->
+				
+				<!-- <div class="video-style">
+					<center>
+						<video class="video-center" width="896" height="504" controls>
+							<source src="https://cloud.video.taobao.com/play/u/null/p/1/e/6/t/1/442442427703.mp4" type="video/mp4">
+						</video> 
+					</center>  -->
+				<!-- </div>
+				<div class="block_bottom">
+				</div> -->
+			<!-- </div> --> 
+		<!-- --> 
+
+			<div class="gray_div font-serif rw-r-container">
+				<div class="text-2xl lg:text-4xl leading-none pb-2 text-center">
+					Overview: <i>Summary of the Generated Videos</i>
+				</div>
+				<div class="text-base lg:text-lg pb-5 mb-6 text-center">
+					<!-- Synthesize videos in any style you can imagine using nothing but a text prompt. If you can say it, now you can see it. -->
+					<!-- You can generate videos flexibly in any style that you can imagine. -->
+					The real source of art is your imagination, and TF-T2V is the solution for bringing it to life.
+				</div>
+				
+				<div class="video-style">
+					<center>
+						<video class="video-center" width="896" height="504" controls>
+							<source src="https://cloud.video.taobao.com/play/u/null/p/1/e/6/t/1/442613549427.mp4" type="video/mp4">
+						</video> 
+					</center> 
+				</div>
+				<div class="block_bottom">
+				</div>
+			</div>
+
+
+			<div class=" font-serif rw-r-container">
+				<div class="text-2xl lg:text-4xl leading-none pb-2 text-center">
+					Ability 1: <i>Text-to-Video Generation (Resolution: 448x256)</i>
+				</div>
+				<div class="text-base lg:text-lg pb-5 text-center ">
+					You can generate videos flexibly in any style that you can imagine.
+				</div>
+				
+				<!-- <div class="text-base lg:text-lg pb-2 text-center ">
+					Comparisons with baselines.
+				</div> -->
+				<div id="combinationCompareCarousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<!-- Gallery row 1 -->
+							<div class="row tm-gallery subject-container">
+								<div id="tm-gallery-page-pizza" class="tm-gallery-page subject">
+
+									<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+										<figure>
+											<div class="">
+												<img src="https://img.alicdn.com/imgextra/i1/O1CN01mZavtq257R5JBeXGa_!!6000000007479-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01PcTmSF225CEpBJ4ug_!!6000000007068-2-tps-256-256.png"/>
+											</div> -->
+											<figcaption>
+												<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+												<p class="tm-gallery-description" style="font-size:12px;">“Close-up of Caucasian mother and baby girl sitting at windowsill and reading book. Young woman educating daughter at home”</p>
+											</figcaption>
+										</figure>
+									</article>
+		
+									<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+										<figure>
+											<div class="">
+												<img src="https://img.alicdn.com/imgextra/i3/O1CN01Y2GvOK1k2IiMSznqL_!!6000000004625-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01hkqnU21zJu6pKi1F4_!!6000000006694-2-tps-268-268.png" />
+												<img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/>
+											</div> -->
+											
+											<figcaption>
+												<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+												<p class="tm-gallery-description" style="font-size:12px;">“Capsule Being Tested in a Dissolution Apparatus”</p>
+												<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+											</figcaption>
+										</figure>
+									</article>
+		
+									<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+										<figure>
+											<div class="">
+												<img src="https://img.alicdn.com/imgextra/i4/O1CN01hdg1ZR1sNNs9WjhS7_!!6000000005754-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01hkqnU21zJu6pKi1F4_!!6000000006694-2-tps-268-268.png" />
+												<img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/>
+											</div> -->
+											
+											<figcaption>
+												<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+												<p class="tm-gallery-description" style="font-size:12px;">“Elegant Swans On A Misty Lake”</p>
+												<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+											</figcaption>
+										</figure>
+									</article>
+		
+									<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+										<figure>
+											<div class="">
+												<img src="https://img.alicdn.com/imgextra/i1/O1CN01oFA56V1EsS6np2tpM_!!6000000000407-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01hkqnU21zJu6pKi1F4_!!6000000006694-2-tps-268-268.png" />
+												<img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/>
+											</div> -->
+											
+											<figcaption>
+												<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+												<p class="tm-gallery-description" style="font-size:12px;">“A Tyrannosaurus Rex stalks through a forest”</p>
+												<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+											</figcaption>
+										</figure>
+									</article>
+									
+								</div> 
+							</div><!-- gallery row 1 -->
+
+							<!-- Gallery row 1 Method Name -->
+							<div class="row tm-gallery">
+								<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+
+									<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+										<figure>
+											<div class="">
+												<img src="https://img.alicdn.com/imgextra/i3/O1CN01UOAdeq27j6tetvDEx_!!6000000007832-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01hkqnU21zJu6pKi1F4_!!6000000006694-2-tps-268-268.png" />
+												<img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/>
+											</div> -->
+											
+											<figcaption>
+												<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+												<p class="tm-gallery-description" style="font-size:12px;">“man uses a virtual reality glasses against the skyscrapers sky”</p>
+												<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+											</figcaption>
+										</figure>
+									</article>
+
+									<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+										<figure>
+											<div class="">
+												<img src="https://img.alicdn.com/imgextra/i2/O1CN01HFoxS520ToMAd6lgw_!!6000000006851-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01hkqnU21zJu6pKi1F4_!!6000000006694-2-tps-268-268.png" />
+												<img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/>
+											</div> -->
+											
+											<figcaption>
+												<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+												<p class="tm-gallery-description"  style="font-size:12px;">“wild blueberry in autumn colors on wooden table”</p>
+												<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+											</figcaption>
+										</figure>
+									</article>
+
+									<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+										<figure>
+											<div class="">
+												<img src="https://img.alicdn.com/imgextra/i1/O1CN01WvPb941rshKt7DJdH_!!6000000005687-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01hkqnU21zJu6pKi1F4_!!6000000006694-2-tps-268-268.png" />
+												<img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/>
+											</div> -->
+											
+											<figcaption>
+												<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+												<p class="tm-gallery-description" style="font-size:12px;">“A water based Axolotl warrior, Pokémon inspiration, Pixar animated art style”</p>
+												<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+											</figcaption>
+										</figure>
+									</article>
+
+									<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+										<figure>
+											<div class="">
+												<img src="https://img.alicdn.com/imgextra/i4/O1CN010fSep91QmIAZAgtOw_!!6000000002018-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01hkqnU21zJu6pKi1F4_!!6000000006694-2-tps-268-268.png" />
+												<img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/>
+											</div> -->
+											
+											<figcaption>
+												<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+												<p class="tm-gallery-description" style="font-size:12px;">“Mature businesswoman using computer in office”</p>
+												<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+											</figcaption>
+										</figure>
+									</article>
+								</div> 
+							</div><!-- gallery row 1 -->
+							
+							
+							<!-- Gallery row 3 -->
+							<!-- <div class="row tm-gallery">
+								<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+									<figure>
+										<figcaption>
+											<p class="tm-gallery-description text-center">“a dog is skateboarding, front view”</p>
+										</figcaption>
+									</figure>
+								</div> 
+							</div> -->
+							<!-- gallery row 3 -->
+					  	</div>
+
+						<!-- Page 2 -->
+						<div class="carousel-item">
+							<!-- Gallery row 1 -->
+							<div class="row tm-gallery subject-container">
+								<div id="tm-gallery-page-pizza" class="tm-gallery-page subject">
+
+									<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+										<figure>
+											<div class="">
+												<img src="https://img.alicdn.com/imgextra/i1/O1CN01CNQdTK1CNBq7cc1rl_!!6000000000068-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01hkqnU21zJu6pKi1F4_!!6000000006694-2-tps-268-268.png" />
+												<img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/>
+											</div> -->
+											
+											<figcaption>
+												<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+												<p class="tm-gallery-description" style="font-size:12px;">“Old homeless white dog with a sore paw eats from an iron bowl peeking out of the doghouse in animal shelter”</p>
+												<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+											</figcaption>
+										</figure>
+									</article>
+
+									<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+										<figure>
+											<div class="">
+												<img src="https://img.alicdn.com/imgextra/i4/O1CN017XeSWt1vAxyuFjTTV_!!6000000006133-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01hkqnU21zJu6pKi1F4_!!6000000006694-2-tps-268-268.png" />
+												<img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/>
+											</div> -->
+											
+											<figcaption>
+												<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+												<p class="tm-gallery-description" style="font-size:12px;">“Lindsay was a magical teacher with a unique teaching style, cartoon style, dreamlike, hyperdetailed, 8k, hyperealistic”</p>
+												<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+											</figcaption>
+										</figure>
+									</article>
+
+									<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+										<figure>
+											<div class="">
+												<img src="https://img.alicdn.com/imgextra/i1/O1CN01nlzmqd1Gh7XZbuTpL_!!6000000000653-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01hkqnU21zJu6pKi1F4_!!6000000006694-2-tps-268-268.png" />
+												<img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/>
+											</div> -->
+											
+											<figcaption>
+												<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+												<p class="tm-gallery-description" style="font-size:12px;">“league of legends, trippy scenery, insanely detailed”</p>
+												<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+											</figcaption>
+										</figure>
+									</article>
+									
+									<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+										<figure>
+											<div class="">
+												<img src="https://img.alicdn.com/imgextra/i3/O1CN014bSXXV1KogXuqQG4s_!!6000000001211-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01hkqnU21zJu6pKi1F4_!!6000000006694-2-tps-268-268.png" />
+												<img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/>
+											</div> -->
+											
+											<figcaption>
+												<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+												<p class="tm-gallery-description" style="font-size:12px;">“Young woman trekking and enjoying in the woods, holidays and traveling concept”</p>
+												<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+											</figcaption>
+										</figure>
+									</article>
+
+								</div> 
+							</div><!-- gallery row 1 -->
+
+							<!-- Gallery row 1 Method Name-->
+							<div class="row tm-gallery">
+								<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+
+									<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+										<figure>
+											<div class="">
+												<img src="https://img.alicdn.com/imgextra/i4/O1CN01eS4lMi1O2NEOHQlDy_!!6000000001647-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01hkqnU21zJu6pKi1F4_!!6000000006694-2-tps-268-268.png" />
+												<img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/>
+											</div> -->
+											
+											<figcaption>
+												<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+												<p class="tm-gallery-description" style="font-size:12px;">“A water based Axolotl warrior, Pokémon inspiration, Pixar animated art style”</p>
+												<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+											</figcaption>
+										</figure>
+									</article>
+									<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+										<figure>
+											<div class="">
+												<img src="https://img.alicdn.com/imgextra/i4/O1CN017ktbSe1q1HWljC4xm_!!6000000005435-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01hkqnU21zJu6pKi1F4_!!6000000006694-2-tps-268-268.png" />
+												<img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/>
+											</div> -->
+											
+											<figcaption>
+												<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+												<p class="tm-gallery-description" style="font-size:12px;">“european woman holding a lightsaber in a wielding position with neon lights around her, realistic style”</p>
+												<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+											</figcaption>
+										</figure>
+									</article>
+									<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+										<figure>
+											<div class="">
+												<img src="https://img.alicdn.com/imgextra/i1/O1CN01NY9gOX1iimDPSFaou_!!6000000004447-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01hkqnU21zJu6pKi1F4_!!6000000006694-2-tps-268-268.png" />
+												<img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/>
+											</div> -->
+											
+											<figcaption>
+												<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+												<p class="tm-gallery-description" style="font-size:12px;">“Satoru Gojou from jujutsu Kaisen, very handsome and semi muscular, hyper realistic, photorealistic, Studio Lighting, Depth of Field”</p>
+												<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+											</figcaption>
+										</figure>
+									</article>
+									<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+										<figure>
+											<div class="">
+												<img src="https://img.alicdn.com/imgextra/i1/O1CN01u2sJJV1TYxUKFcwOi_!!6000000002395-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01hkqnU21zJu6pKi1F4_!!6000000006694-2-tps-268-268.png" />
+												<img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/>
+											</div> -->
+											
+											<figcaption>
+												<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+												<p class="tm-gallery-description" style="font-size:12px;">“portrait realistic seaside female 25-30 american fashionable”</p>
+												<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+											</figcaption>
+										</figure>
+									</article>
+								</div> 
+							</div><!-- gallery row 1 -->
+							
+							
+
+							<!-- Gallery row 3 -->
+							<!-- <div class="row tm-gallery">
+								<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+									<figure>
+										<figcaption>
+											<p class="tm-gallery-description text-center">“a cat eating grass from under the <span class="context">sand</span>”</p>
+										</figcaption>
+									</figure>
+								</div> 
+							</div> -->
+							<!-- gallery row 3 -->
+						</div>
+
+
+						<!-- Page 3 -->
+						<div class="carousel-item">
+							<!-- Gallery row 1 -->
+							<div class="row tm-gallery subject-container">
+								<div id="tm-gallery-page-pizza" class="tm-gallery-page subject">
+
+									<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+										<figure>
+											<div class="">
+												<img src="https://img.alicdn.com/imgextra/i3/O1CN01JYpP0h1eElnmKNqjq_!!6000000003840-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01hkqnU21zJu6pKi1F4_!!6000000006694-2-tps-268-268.png" />
+												<img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/>
+											</div> -->
+											
+											<figcaption>
+												<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+												<p class="tm-gallery-description" style="font-size:12px;">“Colorful leaves moving in the wind”</p>
+												<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+											</figcaption>
+										</figure>
+									</article>
+									<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+										<figure>
+											<div class="">
+												<img src="https://img.alicdn.com/imgextra/i3/O1CN01OdbeN422Y3FpiQSJg_!!6000000007131-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01hkqnU21zJu6pKi1F4_!!6000000006694-2-tps-268-268.png" />
+												<img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/>
+											</div> -->
+											
+											<figcaption>
+												<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+												<p class="tm-gallery-description" style="font-size:12px;">“Las Nubes waterfall in Chiapas”</p>
+												<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+											</figcaption>
+										</figure>
+									</article>
+									<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+										<figure>
+											<div class="">
+												<img src="https://img.alicdn.com/imgextra/i1/O1CN01VsQE2C1jVmarJHNQZ_!!6000000004554-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01hkqnU21zJu6pKi1F4_!!6000000006694-2-tps-268-268.png" />
+												<img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/>
+											</div> -->
+											
+											<figcaption>
+												<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+												<p class="tm-gallery-description" style="font-size:12px;">“Cute little Asian girl playing with a teddy bear on a motorbike”</p>
+												<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+											</figcaption>
+										</figure>
+									</article>
+									<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+										<figure>
+											<div class="">
+												<img src="https://img.alicdn.com/imgextra/i1/O1CN013NL1El1FMDquIu4p8_!!6000000000472-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01hkqnU21zJu6pKi1F4_!!6000000006694-2-tps-268-268.png" />
+												<img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/>
+											</div> -->
+											
+											<figcaption>
+												<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+												<p class="tm-gallery-description" style="font-size:12px;">“Driving Along Amish Countryside Came Across an Amish Man on a Scooter”</p>
+												<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+											</figcaption>
+										</figure>
+									</article>
+								</div> 
+							</div><!-- gallery row 1 -->
+
+							<!-- Gallery row 1 Method Name-->
+							<div class="row tm-gallery">
+								<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+
+									<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+										<figure>
+											<div class="">
+												<img src="https://img.alicdn.com/imgextra/i1/O1CN01iBObjR1t6GgeZaGi9_!!6000000005852-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01hkqnU21zJu6pKi1F4_!!6000000006694-2-tps-268-268.png" />
+												<img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/>
+											</div> -->
+											
+											<figcaption>
+												<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+												<p class="tm-gallery-description" style="font-size:12px;">“cute alpacas, pixa, max details”</p>
+												<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+											</figcaption>
+										</figure>
+									</article>
+									<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+										<figure>
+											<div class="">
+												<img src="https://img.alicdn.com/imgextra/i1/O1CN01NeYJz11z7zsOu2qiS_!!6000000006668-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01hkqnU21zJu6pKi1F4_!!6000000006694-2-tps-268-268.png" />
+												<img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/>
+											</div> -->
+											
+											<figcaption>
+												<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+												<p class="tm-gallery-description" style="font-size:12px;">“a cavern with a pedestal in it's center with a small glowing orb on top of it”</p>
+												<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+											</figcaption>
+										</figure>
+									</article>
+									<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+										<figure>
+											<div class="">
+												<img src="https://img.alicdn.com/imgextra/i1/O1CN01DzID6p1qP67bsJxb7_!!6000000005487-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01hkqnU21zJu6pKi1F4_!!6000000006694-2-tps-268-268.png" />
+												<img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/>
+											</div> -->
+											
+											<figcaption>
+												<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+												<p class="tm-gallery-description" style="font-size:12px;">“Beautiful 20 year old female, ginger with volumized hair and curls, dressed up as a vampire for a halloween party”</p>
+												<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+											</figcaption>
+										</figure>
+									</article>
+									<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+										<figure>
+											<div class="">
+												<img src="https://img.alicdn.com/imgextra/i1/O1CN01Sb55o626MNcoVztON_!!6000000007647-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01hkqnU21zJu6pKi1F4_!!6000000006694-2-tps-268-268.png" />
+												<img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/>
+											</div> -->
+											
+											<figcaption>
+												<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+												<p class="tm-gallery-description" style="font-size:12px;">“Tre Cime di Lavaredo, Dolomites, Italian Alps, Italy”</p>
+												<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+											</figcaption>
+										</figure>
+									</article>
+								</div> 
+							</div><!-- gallery row 1 -->
+							
+							
+
+							<!-- Gallery row 3 -->
+							<!-- <div class="row tm-gallery">
+								<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+									<figure>
+										<figcaption>
+											<p class="tm-gallery-description text-center">“a dog is surfing”</p>
+										</figcaption>
+									</figure>
+								</div> 
+							</div> -->
+							<!-- gallery row 3 -->
+						</div>
+						
+						<!-- page 4 -->
+						<div class="carousel-item">
+							<!-- Gallery row 1 -->
+							<div class="row tm-gallery subject-container">
+								<div id="tm-gallery-page-pizza" class="tm-gallery-page subject">
+
+									<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+										<figure>
+											<div class="">
+												<img src="https://img.alicdn.com/imgextra/i2/O1CN01FLxSLX1eNviwh0vmc_!!6000000003860-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01hkqnU21zJu6pKi1F4_!!6000000006694-2-tps-268-268.png" />
+												<img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/>
+											</div> -->
+											
+											<figcaption>
+												<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+												<p class="tm-gallery-description" style="font-size:12px;">“wren, with watercolour splash background, clip art illustration, line drawing, watercolour drawing”</p>
+												<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+											</figcaption>
+										</figure>
+									</article>
+									<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+										<figure>
+											<div class="">
+												<img src="https://img.alicdn.com/imgextra/i2/O1CN01j7ccuL1m4FdEmdEzl_!!6000000004900-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01hkqnU21zJu6pKi1F4_!!6000000006694-2-tps-268-268.png" />
+												<img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/>
+											</div> -->
+											
+											<figcaption>
+												<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+												<p class="tm-gallery-description" style="font-size:12px;">“Flowing abstract and mystical orange flowers in underwater space”</p>
+												<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+											</figcaption>
+										</figure>
+									</article>
+									<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+										<figure>
+											<div class="">
+												<img src="https://img.alicdn.com/imgextra/i1/O1CN01N2C1Vq1hS05jZPSIE_!!6000000004275-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01hkqnU21zJu6pKi1F4_!!6000000006694-2-tps-268-268.png" />
+												<img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/>
+											</div> -->
+											
+											<figcaption>
+												<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+												<p class="tm-gallery-description" style="font-size:12px;">“gorgeous Latina, light brown hair, honey brown eyes, honey glowing skin, goddess, looking towards you”</p>
+												<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+											</figcaption>
+										</figure>
+									</article>
+									<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+										<figure>
+											<div class="">
+												<img src="https://img.alicdn.com/imgextra/i4/O1CN01PbSYXd1b67TOCss16_!!6000000003415-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01hkqnU21zJu6pKi1F4_!!6000000006694-2-tps-268-268.png" />
+												<img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/>
+											</div> -->
+											
+											<figcaption>
+												<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+												<p class="tm-gallery-description" style="font-size:12px;">“happy cute cartoon hedgehog hugs a flower, white background, fantasy mood, incredibly detailed”</p>
+												<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+											</figcaption>
+										</figure>
+									</article>
+								</div> 
+							</div><!-- gallery row 1 -->
+
+							<!-- Gallery row 1 Method Name-->
+							<div class="row tm-gallery">
+								<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+
+									<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+										<figure>
+											<div class="">
+												<img src="https://img.alicdn.com/imgextra/i3/O1CN01vgg7C11kcU0Bz7s9e_!!6000000004704-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01hkqnU21zJu6pKi1F4_!!6000000006694-2-tps-268-268.png" />
+												<img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/>
+											</div> -->
+											
+											<figcaption>
+												<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+												<p class="tm-gallery-description" style="font-size:12px;">“portrait of a small young artist women with orange air, similing with innoncence while she paint”</p>
+												<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+											</figcaption>
+										</figure>
+									</article>
+									<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+										<figure>
+											<div class="">
+												<img src="https://img.alicdn.com/imgextra/i3/O1CN01eubpek1R0URuItftF_!!6000000002049-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01hkqnU21zJu6pKi1F4_!!6000000006694-2-tps-268-268.png" />
+												<img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/>
+											</div> -->
+											
+											<figcaption>
+												<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+												<p class="tm-gallery-description" style="font-size:12px;">“Basket of fresh wasabi plants”</p>
+												<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+											</figcaption>
+										</figure>
+									</article>
+									<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+										<figure>
+											<div class="">
+												<img src="https://img.alicdn.com/imgextra/i1/O1CN01YYwP4L1boXtQwWpSW_!!6000000003512-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01hkqnU21zJu6pKi1F4_!!6000000006694-2-tps-268-268.png" />
+												<img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/>
+											</div> -->
+											
+											<figcaption>
+												<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+												<p class="tm-gallery-description" style="font-size:12px;">“Blonde bride in fashion white wedding dress with makeup”</p>
+												<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+											</figcaption>
+										</figure>
+									</article>
+									<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+										<figure>
+											<div class="">
+												<img src="https://img.alicdn.com/imgextra/i1/O1CN01uUhjLY1Mnt5S8KgEA_!!6000000001480-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01hkqnU21zJu6pKi1F4_!!6000000006694-2-tps-268-268.png" />
+												<img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/>
+											</div> -->
+											
+											<figcaption>
+												<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+												<p class="tm-gallery-description" style="font-size:12px;">“blonde female texting on mobile in flat”</p>
+												<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+											</figcaption>
+										</figure>
+									</article>
+								</div> 
+							</div><!-- gallery row 1 -->
+							
+							
+							<!-- Gallery row 3 -->
+							<!-- <div class="row tm-gallery">
+								<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+									<figure>
+										<figcaption>
+											<p class="tm-gallery-description text-center">“a dog running on the <span class="context">Place du Louvre</span>”</p>
+										</figcaption>
+									</figure>
+								</div> 
+							</div> -->
+							<!-- gallery row 3 -->
+						</div>
+					</div>
+					<button class="carousel-control-prev" type="button" data-bs-target="#combinationCompareCarousel" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#combinationCompareCarousel" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+				</div>
+
+			</div>
+				
+
+
+
+
+
+
+
+
+
+			
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<div class="gray_div font-serif rw-r-container" >
+		<!-- <div class="gray_div font-serif rw-r-container" > -->
+			<div class="text-2xl lg:text-4xl leading-none pb-2 text-center">
+				Ability 2: <i>Text-to-Video Generation (Resolution: 896x512)</i>
+			</div>
+			<div class="text-base lg:text-lg pb-5 text-center ">
+				You can generate high-resolution videos flexibly in any style that you can imagine.
+			</div>
+			
+			<!-- <div class="text-base lg:text-lg pb-2 text-center ">
+					Comparisons with baselines.
+				</div> -->
+				<div id="combinationCompareCarousel_2" class="carousel carousel-dark slide" data-bs-ride="carousel">
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<!-- Gallery row 1 -->
+							<div class="row tm-gallery" >
+								<div id="tm-gallery-page-pizza" class="tm-gallery-page" >
+
+									<!-- <article class="col-lg-3 tm-gallery-item"> -->
+										<figure>
+											<div class="" style="display: flex; justify-content: center; align-items: center;" >
+												<img src="https://img.alicdn.com/imgextra/i1/O1CN01J91RZY1bpSgZWlROC_!!6000000003514-1-tps-896-512.gif" alt="Image" class="img-fluid tm-gallery-img" width="90%" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01PcTmSF225CEpBJ4ug_!!6000000007068-2-tps-256-256.png"/>
+											</div> -->
+											<figcaption >
+												<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+												<p class="tm-gallery-description text-center text-container" style="font-size:12px; "  >“valentines background with hearts, professional food photography with lots of copy space UHD 8k”</p>
+											</figcaption>
+											
+										</figure>
+									<!-- </article> -->
+		
+									<!-- <article class="col-lg-6 tm-gallery-item"> -->
+										<figure>
+											<div class="" style="display: flex; justify-content: center; align-items: center;" >
+												<img src="https://img.alicdn.com/imgextra/i2/O1CN01BR30ct1E0PNChfHb2_!!6000000000289-1-tps-896-512.gif" alt="Image" class="img-fluid tm-gallery-img" width="90%" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01PcTmSF225CEpBJ4ug_!!6000000007068-2-tps-256-256.png"/>
+											</div> -->
+											<figcaption >
+												<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+												<p class="tm-gallery-description text-center text-container" style="font-size:12px; "  >“Mahatma Gandhi, wearing a Mario costume complete with the iconic red cap, blue overalls, and red shirt, strikes a playful pose as he embraces the spirit of the famous video game character”</p>
+											</figcaption>
+											
+										</figure>
+									<!-- </article> -->
+		
+									
+		
+									
+									
+								</div> 
+							</div><!-- gallery row 1 -->
+
+							<!-- Gallery row 1 Method Name -->
+							<!-- <div class="row tm-gallery"> -->
+								<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+
+									<!-- <article class="col-lg-3 tm-gallery-item"> -->
+										<figure>
+											<div class="" style="display: flex; justify-content: center; align-items: center;" >
+												<img src="https://img.alicdn.com/imgextra/i4/O1CN01M4kADE1aedi5ygrgA_!!6000000003355-1-tps-896-512.gif" alt="Image" class="img-fluid tm-gallery-img" width="90%" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01PcTmSF225CEpBJ4ug_!!6000000007068-2-tps-256-256.png"/>
+											</div> -->
+											<figcaption >
+												<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+												<p class="tm-gallery-description text-center text-container" style="font-size:12px; "  >“Senior Romantic Couple Outside”</p>
+											</figcaption>
+											
+										</figure>
+									<!-- </article> -->
+		
+									<!-- <article class="col-lg-6 tm-gallery-item"> -->
+										<figure>
+											<div class="" style="display: flex; justify-content: center; align-items: center;" >
+												<img src="https://img.alicdn.com/imgextra/i1/O1CN010cCavG1qKyYfDO4Mj_!!6000000005478-1-tps-896-512.gif" alt="Image" class="img-fluid tm-gallery-img" width="90%" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01PcTmSF225CEpBJ4ug_!!6000000007068-2-tps-256-256.png"/>
+											</div> -->
+											<figcaption >
+												<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+												<p class="tm-gallery-description text-center text-container" style="font-size:12px; "  >“Cartoon pug dog, shy smile, fantasy, dreamlike, super cute, 8k, highly detailed, intricate, award-wining, cinematic, beautiful light, 100mm”</p>
+											</figcaption>
+											
+										</figure>
+									<!-- </article> -->
+
+									
+
+									
+								<!-- </div>  -->
+							</div><!-- gallery row 1 -->
+							
+							
+							<!-- Gallery row 3 -->
+							<!-- <div class="row tm-gallery">
+								<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+									<figure>
+										<figcaption>
+											<p class="tm-gallery-description text-center">“a dog is skateboarding, front view”</p>
+										</figcaption>
+									</figure>
+								</div> 
+							</div> -->
+							<!-- gallery row 3 -->
+						  </div>
+					
+
+						
+		   
+						  <!-- # Page 2 -->
+						  <div class="carousel-item">
+							<!-- Gallery row 1 -->
+							<div class="row tm-gallery" >
+								<div id="tm-gallery-page-pizza" class="tm-gallery-page" >
+
+									<!-- <article class="col-lg-3 tm-gallery-item"> -->
+										<figure>
+											<div class="" style="display: flex; justify-content: center; align-items: center;" >
+												<img src="https://img.alicdn.com/imgextra/i4/O1CN01C3ubxl1M1nV7sdfa6_!!6000000001375-1-tps-896-512.gif" alt="Image" class="img-fluid tm-gallery-img" width="90%" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01PcTmSF225CEpBJ4ug_!!6000000007068-2-tps-256-256.png"/>
+											</div> -->
+											<figcaption >
+												<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+												<p class="tm-gallery-description text-center text-container" style="font-size:12px; "  >“Steaming Mug”</p>
+											</figcaption>
+											
+										</figure>
+									<!-- </article> -->
+		
+									<!-- <article class="col-lg-6 tm-gallery-item"> -->
+										<figure>
+											<div class="" style="display: flex; justify-content: center; align-items: center;" >
+												<img src="https://img.alicdn.com/imgextra/i4/O1CN018HOIll1waRd5eod2G_!!6000000006324-1-tps-896-512.gif" alt="Image" class="img-fluid tm-gallery-img" width="90%" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01PcTmSF225CEpBJ4ug_!!6000000007068-2-tps-256-256.png"/>
+											</div> -->
+											<figcaption >
+												<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+												<p class="tm-gallery-description text-center text-container" style="font-size:12px; "  >“Portrait Of Male Elementary School Teacher Standing In Classroom”</p>
+											</figcaption>
+											
+										</figure>
+									<!-- </article> -->
+		
+									
+		
+									
+									
+								</div> 
+							</div><!-- gallery row 1 -->
+
+							<!-- Gallery row 1 Method Name -->
+							<!-- <div class="row tm-gallery"> -->
+								<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+
+									<!-- <article class="col-lg-3 tm-gallery-item"> -->
+										<figure>
+											<div class="" style="display: flex; justify-content: center; align-items: center;" >
+												<img src="https://img.alicdn.com/imgextra/i4/O1CN018q65Ii1ycOY0oovuP_!!6000000006599-1-tps-896-512.gif" alt="Image" class="img-fluid tm-gallery-img" width="90%" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01PcTmSF225CEpBJ4ug_!!6000000007068-2-tps-256-256.png"/>
+											</div> -->
+											<figcaption >
+												<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+												<p class="tm-gallery-description text-center text-container" style="font-size:12px; "  >“a house model on a white desk with perfect white lighting from the top”</p>
+											</figcaption>
+											
+										</figure>
+									<!-- </article> -->
+		
+									<!-- <article class="col-lg-6 tm-gallery-item"> -->
+										<figure>
+											<div class="" style="display: flex; justify-content: center; align-items: center;" >
+												<img src="https://img.alicdn.com/imgextra/i4/O1CN01G7Ljju20ZlVNBPyyt_!!6000000006864-1-tps-896-512.gif" alt="Image" class="img-fluid tm-gallery-img" width="90%" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01PcTmSF225CEpBJ4ug_!!6000000007068-2-tps-256-256.png"/>
+											</div> -->
+											<figcaption >
+												<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+												<p class="tm-gallery-description text-center text-container" style="font-size:12px; "  >“logo of a cartoon bee for a candy company”</p>
+											</figcaption>
+											
+										</figure>
+									<!-- </article> -->
+
+									
+
+									
+								<!-- </div>  -->
+							</div><!-- gallery row 1 -->
+							
+							
+							<!-- Gallery row 3 -->
+							<!-- <div class="row tm-gallery">
+								<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+									<figure>
+										<figcaption>
+											<p class="tm-gallery-description text-center">“a dog is skateboarding, front view”</p>
+										</figcaption>
+									</figure>
+								</div> 
+							</div> -->
+							<!-- gallery row 3 -->
+						  </div>
+						  
+						
+						  
+
+
+
+
+
+
+
+						   <!-- # Page 3 -->
+						<div class="carousel-item">
+							<!-- Gallery row 1 -->
+							<div class="row tm-gallery" >
+								<div id="tm-gallery-page-pizza" class="tm-gallery-page" >
+
+									<!-- <article class="col-lg-3 tm-gallery-item"> -->
+										<figure>
+											<div class="" style="display: flex; justify-content: center; align-items: center;" >
+												<img src="https://img.alicdn.com/imgextra/i2/O1CN01D9Rh9k1TiZno6QuVK_!!6000000002416-1-tps-896-512.gif" alt="Image" class="img-fluid tm-gallery-img" width="90%" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01PcTmSF225CEpBJ4ug_!!6000000007068-2-tps-256-256.png"/>
+											</div> -->
+											<figcaption >
+												<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+												<p class="tm-gallery-description text-center text-container" style="font-size:12px; "  >“Smiling future mother using computer sitting near window”</p>
+											</figcaption>
+											
+										</figure>
+									<!-- </article> -->
+		
+									<!-- <article class="col-lg-6 tm-gallery-item"> -->
+										<figure>
+											<div class="" style="display: flex; justify-content: center; align-items: center;" >
+												<img src="https://img.alicdn.com/imgextra/i1/O1CN01kpK6dA1WYRtQuGaSk_!!6000000002800-1-tps-896-512.gif" alt="Image" class="img-fluid tm-gallery-img" width="90%" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01PcTmSF225CEpBJ4ug_!!6000000007068-2-tps-256-256.png"/>
+											</div> -->
+											<figcaption >
+												<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+												<p class="tm-gallery-description text-center text-container" style="font-size:12px; "  >“Modern interior living room background, a rose bouquet, butterflies and flowers in the style of painting, with a green chair and lights for the table and ceiling”</p>
+											</figcaption>
+											
+										</figure>
+									<!-- </article> -->
+		
+									
+		
+									
+									
+								</div> 
+							</div><!-- gallery row 1 -->
+
+							<!-- Gallery row 1 Method Name -->
+							<!-- <div class="row tm-gallery"> -->
+								<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+
+									<!-- <article class="col-lg-3 tm-gallery-item"> -->
+										<figure>
+											<div class="" style="display: flex; justify-content: center; align-items: center;" >
+												<img src="https://img.alicdn.com/imgextra/i4/O1CN01Py68DR1clcz8IqtH7_!!6000000003641-1-tps-896-512.gif" alt="Image" class="img-fluid tm-gallery-img" width="90%" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01PcTmSF225CEpBJ4ug_!!6000000007068-2-tps-256-256.png"/>
+											</div> -->
+											<figcaption >
+												<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+												<p class="tm-gallery-description text-center text-container" style="font-size:12px; "  >“white fluffy cat in shabby chic bedroom, in the style of soft-focus portraits, white and azure”</p>
+											</figcaption>
+											
+										</figure>
+									<!-- </article> -->
+		
+									<!-- <article class="col-lg-6 tm-gallery-item"> -->
+										<figure>
+											<div class="" style="display: flex; justify-content: center; align-items: center;" >
+												<img src="https://img.alicdn.com/imgextra/i3/O1CN012z1rjV1x7Q98xfVL9_!!6000000006396-1-tps-896-512.gif" alt="Image" class="img-fluid tm-gallery-img" width="90%" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01PcTmSF225CEpBJ4ug_!!6000000007068-2-tps-256-256.png"/>
+											</div> -->
+											<figcaption >
+												<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+												<p class="tm-gallery-description text-center text-container" style="font-size:12px; "  >“Man with vibrant red skin and gray facial markings wearing a black tshirt and brown jacket, red skin, realistic proportions, 8k, ultra detailed, hyperrealistic, raytracing, realistic skin texture”</p>
+											</figcaption>
+											
+										</figure>
+									<!-- </article> -->
+
+									
+
+									
+								<!-- </div>  -->
+							</div><!-- gallery row 1 -->
+							
+							
+							<!-- Gallery row 3 -->
+							<!-- <div class="row tm-gallery">
+								<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+									<figure>
+										<figcaption>
+											<p class="tm-gallery-description text-center">“a dog is skateboarding, front view”</p>
+										</figcaption>
+									</figure>
+								</div> 
+							</div> -->
+							<!-- gallery row 3 -->
+						  </div>
+
+
+
+
+
+
+
+						   <!-- # Page 4 -->
+						<div class="carousel-item">
+							<!-- Gallery row 1 -->
+							<div class="row tm-gallery" >
+								<div id="tm-gallery-page-pizza" class="tm-gallery-page" >
+
+									<!-- <article class="col-lg-3 tm-gallery-item"> -->
+										<figure>
+											<div class="" style="display: flex; justify-content: center; align-items: center;" >
+												<img src="https://img.alicdn.com/imgextra/i4/O1CN01yi9TWK290LPv3BAyo_!!6000000008005-1-tps-896-512.gif" alt="Image" class="img-fluid tm-gallery-img" width="90%" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01PcTmSF225CEpBJ4ug_!!6000000007068-2-tps-256-256.png"/>
+											</div> -->
+											<figcaption >
+												<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+												<p class="tm-gallery-description text-center text-container" style="font-size:12px; "  >“Nature scenery around Bukhangang River and Water Garden in Joan County in Namyangju-si and Yangseo County / Yangpyeong-gun, Gyeonggi-do, South Korea”</p>
+											</figcaption>
+											
+										</figure>
+									<!-- </article> -->
+		
+									<!-- <article class="col-lg-6 tm-gallery-item"> -->
+										<figure>
+											<div class="" style="display: flex; justify-content: center; align-items: center;" >
+												<img src="https://img.alicdn.com/imgextra/i3/O1CN01x4tJ1a1UdpJSjQNUX_!!6000000002541-1-tps-896-512.gif" alt="Image" class="img-fluid tm-gallery-img" width="90%" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01PcTmSF225CEpBJ4ug_!!6000000007068-2-tps-256-256.png"/>
+											</div> -->
+											<figcaption >
+												<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+												<p class="tm-gallery-description text-center text-container" style="font-size:12px; "  >“Skin care cosmetics products in bottles appear on the table”</p>
+											</figcaption>
+											
+										</figure>
+									<!-- </article> -->
+		
+									
+		
+									
+									
+								</div> 
+							</div><!-- gallery row 1 -->
+
+							<!-- Gallery row 1 Method Name -->
+							<!-- <div class="row tm-gallery"> -->
+								<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+
+									<!-- <article class="col-lg-3 tm-gallery-item"> -->
+										<figure>
+											<div class="" style="display: flex; justify-content: center; align-items: center;" >
+												<img src="https://img.alicdn.com/imgextra/i2/O1CN01DqUn5F1KgRPiuzzgj_!!6000000001193-1-tps-896-512.gif" alt="Image" class="img-fluid tm-gallery-img" width="90%" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01PcTmSF225CEpBJ4ug_!!6000000007068-2-tps-256-256.png"/>
+											</div> -->
+											<figcaption >
+												<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+												<p class="tm-gallery-description text-center text-container" style="font-size:8px; "  >“A photo of a beautiful 35 year thai woman with black hair wearing a jacket and tattoos as accessories, with a smiling expression on her face and light facial features. The background is a thai subway station. The composition focuses on the woman with the tube station in the background...”</p>
+											</figcaption>
+											
+										</figure>
+									<!-- </article> -->
+		
+									<!-- <article class="col-lg-6 tm-gallery-item"> -->
+										<figure>
+											<div class="" style="display: flex; justify-content: center; align-items: center;" >
+												<img src="https://img.alicdn.com/imgextra/i1/O1CN01w2v2L725X5GV9Czqe_!!6000000007535-1-tps-896-512.gif" alt="Image" class="img-fluid tm-gallery-img" width="90%" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01PcTmSF225CEpBJ4ug_!!6000000007068-2-tps-256-256.png"/>
+											</div> -->
+											<figcaption >
+												<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+												<p class="tm-gallery-description text-center text-container" style="font-size:12px; "  >“Adorable hispanic girl smiling confident standing on cradle at bedroom”</p>
+											</figcaption>
+											
+										</figure>
+									<!-- </article> -->
+
+									
+
+									
+								<!-- </div>  -->
+							</div><!-- gallery row 1 -->
+							
+							
+							<!-- Gallery row 3 -->
+							<!-- <div class="row tm-gallery">
+								<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+									<figure>
+										<figcaption>
+											<p class="tm-gallery-description text-center">“a dog is skateboarding, front view”</p>
+										</figcaption>
+									</figure>
+								</div> 
+							</div> -->
+							<!-- gallery row 3 -->
+						  </div>
+
+
+
+
+
+						   <!-- # Page 5 -->
+						<div class="carousel-item">
+							<!-- Gallery row 1 -->
+							<div class="row tm-gallery" >
+								<div id="tm-gallery-page-pizza" class="tm-gallery-page" >
+
+									<!-- <article class="col-lg-3 tm-gallery-item"> -->
+										<figure>
+											<div class="" style="display: flex; justify-content: center; align-items: center;" >
+												<img src="https://img.alicdn.com/imgextra/i1/O1CN01OKaNbT1cLynw7CGsf_!!6000000003585-1-tps-896-512.gif" alt="Image" class="img-fluid tm-gallery-img" width="90%" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01PcTmSF225CEpBJ4ug_!!6000000007068-2-tps-256-256.png"/>
+											</div> -->
+											<figcaption >
+												<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+												<p class="tm-gallery-description text-center text-container" style="font-size:12px; "  >“Modern interior living room background, a rose bouquet, butterflies and flowers in the style of painting, with a green chair and lights for the table”</p>
+											</figcaption>
+											
+										</figure>
+									<!-- </article> -->
+		
+									<!-- <article class="col-lg-6 tm-gallery-item"> -->
+										<figure>
+											<div class="" style="display: flex; justify-content: center; align-items: center;" >
+												<img src="https://img.alicdn.com/imgextra/i3/O1CN01MuE1FI1hhZYYzVJpP_!!6000000004309-1-tps-896-512.gif" alt="Image" class="img-fluid tm-gallery-img" width="90%" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01PcTmSF225CEpBJ4ug_!!6000000007068-2-tps-256-256.png"/>
+											</div> -->
+											<figcaption >
+												<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+												<p class="tm-gallery-description text-center text-container" style="font-size:12px; "  >“futuristic fantasy motorcycle, symmetric, detailed, hyperrealistic”</p>
+											</figcaption>
+											
+										</figure>
+									<!-- </article> -->
+		
+									
+		
+									
+									
+								</div> 
+							</div><!-- gallery row 1 -->
+
+							<!-- Gallery row 1 Method Name -->
+							<!-- <div class="row tm-gallery"> -->
+								<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+
+									<!-- <article class="col-lg-3 tm-gallery-item"> -->
+										<figure>
+											<div class="" style="display: flex; justify-content: center; align-items: center;" >
+												<img src="https://img.alicdn.com/imgextra/i2/O1CN01UEJgDz1QnCxkH8nn7_!!6000000002020-1-tps-896-512.gif" alt="Image" class="img-fluid tm-gallery-img" width="90%" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01PcTmSF225CEpBJ4ug_!!6000000007068-2-tps-256-256.png"/>
+											</div> -->
+											<figcaption >
+												<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+												<p class="tm-gallery-description text-center text-container" style="font-size:12px; "  >“A magpie is singing and standing on a tall branch, there are some beautiful cherry blossoms in front of the lens”</p>
+											</figcaption>
+											
+										</figure>
+									<!-- </article> -->
+		
+									<!-- <article class="col-lg-6 tm-gallery-item"> -->
+										<figure>
+											<div class="" style="display: flex; justify-content: center; align-items: center;" >
+												<img src="https://img.alicdn.com/imgextra/i2/O1CN01att0NJ1HLsmvrON62_!!6000000000742-1-tps-896-512.gif" alt="Image" class="img-fluid tm-gallery-img" width="90%" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01PcTmSF225CEpBJ4ug_!!6000000007068-2-tps-256-256.png"/>
+											</div> -->
+											<figcaption >
+												<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+												<p class="tm-gallery-description text-center text-container" style="font-size:12px; "  >“White millennial girl texting on cellphone, smiling outdoors by the bay or water”</p>
+											</figcaption>
+											
+										</figure>
+									<!-- </article> -->
+
+									
+
+									
+								<!-- </div>  -->
+							</div><!-- gallery row 1 -->
+							
+							
+							<!-- Gallery row 3 -->
+							<!-- <div class="row tm-gallery">
+								<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+									<figure>
+										<figcaption>
+											<p class="tm-gallery-description text-center">“a dog is skateboarding, front view”</p>
+										</figcaption>
+									</figure>
+								</div> 
+							</div> -->
+							<!-- gallery row 3 -->
+						  </div>
+
+
+
+
+
+
+						   <!-- # Page 6 -->
+						<div class="carousel-item ">
+							<!-- Gallery row 1 -->
+							<div class="row tm-gallery" >
+								<div id="tm-gallery-page-pizza" class="tm-gallery-page" >
+
+									<!-- <article class="col-lg-3 tm-gallery-item"> -->
+										<figure>
+											<div class="" style="display: flex; justify-content: center; align-items: center;" >
+												<img src="https://img.alicdn.com/imgextra/i1/O1CN01cBkTdS29Z9W9WjOw2_!!6000000008081-1-tps-896-512.gif" alt="Image" class="img-fluid tm-gallery-img" width="90%" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01PcTmSF225CEpBJ4ug_!!6000000007068-2-tps-256-256.png"/>
+											</div> -->
+											<figcaption >
+												<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+												<p class="tm-gallery-description text-center text-container" style="font-size:12px; "  >“illustration with bright colors, main theme - garden, ar 3:4”</p>
+											</figcaption>
+											
+										</figure>
+									<!-- </article> -->
+		
+									<!-- <article class="col-lg-6 tm-gallery-item"> -->
+										<figure>
+											<div class="" style="display: flex; justify-content: center; align-items: center;" >
+												<img src="https://img.alicdn.com/imgextra/i2/O1CN01BttfbG28YPFsh7Wdk_!!6000000007944-1-tps-896-512.gif" alt="Image" class="img-fluid tm-gallery-img" width="90%" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01PcTmSF225CEpBJ4ug_!!6000000007068-2-tps-256-256.png"/>
+											</div> -->
+											<figcaption >
+												<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+												<p class="tm-gallery-description text-center text-container" style="font-size:12px; "  >“Baby inside crib wanting attention. Happy smiling toddler boy”</p>
+											</figcaption>
+											
+										</figure>
+									<!-- </article> -->
+		
+									
+		
+									
+									
+								</div> 
+							</div><!-- gallery row 1 -->
+
+							<!-- Gallery row 1 Method Name -->
+							<!-- <div class="row tm-gallery"> -->
+								<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+
+									<!-- <article class="col-lg-3 tm-gallery-item"> -->
+										<figure>
+											<div class="" style="display: flex; justify-content: center; align-items: center;" >
+												<img src="https://img.alicdn.com/imgextra/i3/O1CN01r3ysB31F6eNxTYj7a_!!6000000000438-1-tps-896-512.gif" alt="Image" class="img-fluid tm-gallery-img" width="90%" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01PcTmSF225CEpBJ4ug_!!6000000007068-2-tps-256-256.png"/>
+											</div> -->
+											<figcaption >
+												<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+												<p class="tm-gallery-description text-center text-container" style="font-size:12px; "  >“Little black havanese dog in strong space armor unreal engine 5”</p>
+											</figcaption>
+											
+										</figure>
+									<!-- </article> -->
+		
+									<!-- <article class="col-lg-6 tm-gallery-item"> -->
+										<figure>
+											<div class="" style="display: flex; justify-content: center; align-items: center;" >
+												<img src="https://img.alicdn.com/imgextra/i2/O1CN017UFtfG1fmwyaINDz7_!!6000000004050-1-tps-896-512.gif" alt="Image" class="img-fluid tm-gallery-img" width="90%" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01PcTmSF225CEpBJ4ug_!!6000000007068-2-tps-256-256.png"/>
+											</div> -->
+											<figcaption >
+												<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+												<p class="tm-gallery-description text-center text-container" style="font-size:12px; "  >“infrared photography, dreamy enchanted forest with large and small birch trees, mushrooms, flowers, foxglove, sparkles, vector graphics, by Olga Boznańska, Shutterstock, light effect, feminine, bright butterflies...”</p>
+											</figcaption>
+											
+										</figure>
+									<!-- </article> -->
+
+									
+
+									
+								<!-- </div>  -->
+							</div><!-- gallery row 1 -->
+							
+							
+							<!-- Gallery row 3 -->
+							<!-- <div class="row tm-gallery">
+								<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+									<figure>
+										<figcaption>
+											<p class="tm-gallery-description text-center">“a dog is skateboarding, front view”</p>
+										</figcaption>
+									</figure>
+								</div> 
+							</div> -->
+							<!-- gallery row 3 -->
+						  </div>
+
+
+
+						   <!-- # Page 7 -->
+						<div class="carousel-item ">
+							<!-- Gallery row 1 -->
+							<div class="row tm-gallery" >
+								<div id="tm-gallery-page-pizza" class="tm-gallery-page" >
+
+									<!-- <article class="col-lg-3 tm-gallery-item"> -->
+										<figure>
+											<div class="" style="display: flex; justify-content: center; align-items: center;" >
+												<img src="https://img.alicdn.com/imgextra/i2/O1CN01RpvUXY1jbjk21Bpcx_!!6000000004567-1-tps-896-512.gif" alt="Image" class="img-fluid tm-gallery-img" width="90%" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01PcTmSF225CEpBJ4ug_!!6000000007068-2-tps-256-256.png"/>
+											</div> -->
+											<figcaption >
+												<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+												<p class="tm-gallery-description text-center text-container" style="font-size:12px; "  >“a frost bulky creature in a snow covered landscape. It wields a large spiky ice club. realistic”</p>
+											</figcaption>
+											
+										</figure>
+									<!-- </article> -->
+		
+									<!-- <article class="col-lg-6 tm-gallery-item"> -->
+										<figure>
+											<div class="" style="display: flex; justify-content: center; align-items: center;" >
+												<img src="https://img.alicdn.com/imgextra/i4/O1CN019QpBp81EyreQn9tZa_!!6000000000421-1-tps-896-512.gif" alt="Image" class="img-fluid tm-gallery-img" width="90%" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01PcTmSF225CEpBJ4ug_!!6000000007068-2-tps-256-256.png"/>
+											</div> -->
+											<figcaption >
+												<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+												<p class="tm-gallery-description text-center text-container" style="font-size:12px; "  >“Portrait of female employee working in an urban office”</p>
+											</figcaption>
+											
+										</figure>
+									<!-- </article> -->
+		
+									
+		
+									
+									
+								</div> 
+							</div><!-- gallery row 1 -->
+
+							<!-- Gallery row 1 Method Name -->
+							<!-- <div class="row tm-gallery"> -->
+								<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+
+									<!-- <article class="col-lg-3 tm-gallery-item"> -->
+										<figure>
+											<div class="" style="display: flex; justify-content: center; align-items: center;" >
+												<img src="https://img.alicdn.com/imgextra/i3/O1CN011PbrjZ1gHB7Kaeghv_!!6000000004116-1-tps-896-512.gif" alt="Image" class="img-fluid tm-gallery-img" width="90%" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01PcTmSF225CEpBJ4ug_!!6000000007068-2-tps-256-256.png"/>
+											</div> -->
+											<figcaption >
+												<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+												<p class="tm-gallery-description text-center text-container" style="font-size:12px; "  >“Beautiful turquoise water alpine lake in Dolomites mountains, Belluno, Italy. Aerial view”</p>
+											</figcaption>
+											
+										</figure>
+									<!-- </article> -->
+		
+									<!-- <article class="col-lg-6 tm-gallery-item"> -->
+										<figure>
+											<div class="" style="display: flex; justify-content: center; align-items: center;" >
+												<img src="https://img.alicdn.com/imgextra/i2/O1CN01AG1uyn1OS1PSE0xx8_!!6000000001703-1-tps-896-512.gif" alt="Image" class="img-fluid tm-gallery-img" width="90%" />
+											</div>	
+											<!-- <div class="w-1/4 max-h-50 condition_img">
+												<img src="https://gw.alicdn.com/imgextra/i1/O1CN01PcTmSF225CEpBJ4ug_!!6000000007068-2-tps-256-256.png"/>
+											</div> -->
+											<figcaption >
+												<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+												<p class="tm-gallery-description text-center text-container" style="font-size:12px; "  >“Senior hispanic man suffering from headache feeling desperate and stressed”</p>
+											</figcaption>
+											
+										</figure>
+									<!-- </article> -->
+
+									
+
+									
+								<!-- </div>  -->
+							</div><!-- gallery row 1 -->
+							
+							
+							<!-- Gallery row 3 -->
+							<!-- <div class="row tm-gallery">
+								<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+									<figure>
+										<figcaption>
+											<p class="tm-gallery-description text-center">“a dog is skateboarding, front view”</p>
+										</figcaption>
+									</figure>
+								</div> 
+							</div> -->
+							<!-- gallery row 3 -->
+						  </div>
+
+
+
+
+
+
+							
+					</div>
+					<button class="carousel-control-prev" type="button" data-bs-target="#combinationCompareCarousel_2" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#combinationCompareCarousel_2" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+				</div>
+
+			</div>
+	    <!-- </div> -->
+		<!-- </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<!-- gray_div -->
+			<div class=" font-serif rw-r-container">
+				<div class="text-2xl lg:text-4xl leading-none pb-2 text-center">
+					Ability 3: <i>Compositional Video Synthesis (Resolution 448x256)</i>
+				</div>
+				<div class="text-base lg:text-lg pb-5 text-center ">
+					You can generate videos flexibly with diverse structural conditions.
+				</div>
+				
+
+				<!-- Depth-to-video -->
+				<!-- Gallery -->
+				<div class="row tm-gallery">
+					<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+						<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+							<figure>
+								<div class="">
+									<img src="https://img.alicdn.com/imgextra/i3/O1CN01fMn7Mq1l8XjAD0ZtX_!!6000000004774-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+								</div>	
+								<div class="w-1/4 max-h-50 condition_img">
+									<img src="https://img.alicdn.com/imgextra/i3/O1CN01sQgmSZ1X7Fzj9RwRd_!!6000000002876-1-tps-448-256.gif"/>
+								</div>
+								<figcaption>
+									<h4 class="tm-gallery-title">Text + Depth</h4>
+									<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+									<p class="tm-gallery-description" style="font-size:12px; ">“Charming young girl with flowers.”</p>
+								</figcaption>
+							</figure>
+						</article>
+
+						<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+							<figure>
+								<div class="">
+									<img src="https://img.alicdn.com/imgextra/i1/O1CN01ZJyF3P1yJcJBHSmnW_!!6000000006558-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+								</div>	
+								<div class="w-1/4 max-h-50 condition_img" style="display: flex">
+									<img src="https://img.alicdn.com/imgextra/i2/O1CN01xZ5hHU25M5lExh2vN_!!6000000007511-1-tps-448-256.gif" />
+									<!-- <img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/> -->
+								</div>
+								
+								<figcaption>
+									<h4 class="tm-gallery-title">Text + Depth</h4>
+									<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+									<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+									<p class="tm-gallery-description" style="font-size:12px; ">"Close up of a young girl drawing on a chalkboard"</p>
+								</figcaption>
+							</figure>
+						</article>
+
+						<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+							<figure>
+								<div class="">
+									<img src="https://img.alicdn.com/imgextra/i4/O1CN01nAu6UP1Pw51KQtuZf_!!6000000001904-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+								</div>	
+								<div class="w-1/4 max-h-50 condition_img" style="display: flex">
+									<img src="https://img.alicdn.com/imgextra/i2/O1CN01uVoz6F23KbEpUVF2s_!!6000000007237-1-tps-448-256.gif"/>
+									<!-- <img src="https://gw.alicdn.com/imgextra/i1/O1CN01ciYGVl1jqqkMREpbh_!!6000000004600-0-tps-336-336.jpg"/>
+									<img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/>
+									<img src="https://gw.alicdn.com/imgextra/i2/O1CN01xyKJaa1M45PqNmJZK_!!6000000001380-2-tps-256-256.png"/> -->
+								</div>
+								<figcaption>
+									<h4 class="tm-gallery-title">Text + Depth</h4>
+									<!-- <h4 class="tm-gallery-title">Style + Depth + Sketch + Motions</h4> -->
+									<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+									<p class="tm-gallery-description" style="font-size:12px; ">"waking in the jungle"</p>
+								</figcaption>
+							</figure>
+						</article>
+
+						<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+							<figure>
+								<div class="">
+									<img src="https://img.alicdn.com/imgextra/i4/O1CN01pzT47f1sJGJ93HGpp_!!6000000005745-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+								</div>	
+								<div class="w-1/4 max-h-50 condition_img" style="display: flex">
+									<img src="https://img.alicdn.com/imgextra/i2/O1CN01m9hcxE204AB3mbfKU_!!6000000006795-1-tps-448-256.gif"/>
+									<!-- <img src="https://gw.alicdn.com/imgextra/i1/O1CN01lMhWYo1KD802vVUtK_!!6000000001129-0-tps-338-338.jpg"/> -->
+								</div>
+								<figcaption>
+									<h4 class="tm-gallery-title">Text + Depth</h4>
+									<!-- <h4 class="tm-gallery-title">Style + Hand-crafted Sketch + Hand-crafted motions</h4> -->
+									<p class="tm-gallery-description" style="font-size:12px; ">"Student in eyeglasses laughing at camera. Businessman posing at camera outdoors"</p>
+								</figcaption>
+							</figure>
+						</article>
+					</div> <!-- gallery page 1 -->
+				</div>
+
+
+
+
+				<!-- Sketch-to-video -->
+				<!-- Gallery -->
+				<div class="row tm-gallery">
+					<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+						<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+							<figure>
+								<div class="">
+									<img src="https://img.alicdn.com/imgextra/i1/O1CN01KikK9q1cr7jnADhm7_!!6000000003653-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+								</div>	
+								<div class="w-1/4 max-h-50 condition_img">
+									<img src="https://img.alicdn.com/imgextra/i1/O1CN01UyGJq11p5Zcep8POz_!!6000000005309-1-tps-448-256.gif"/>
+								</div>
+								<figcaption>
+									<h4 class="tm-gallery-title">Text + Sketch</h4>
+									<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+									<p class="tm-gallery-description" style="font-size:9px; ">“Black woman, skincare and glow with smile while hand touch shoulder to feel smooth texture. Model, happy and skin with soft, healthy and wellness for portrait with beauty, cosmetics and dermatology”</p>
+								</figcaption>
+							</figure>
+						</article>
+
+						<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+							<figure>
+								<div class="">
+									<img src="https://img.alicdn.com/imgextra/i1/O1CN01LQlz8U1vcu8u7eW1l_!!6000000006194-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+								</div>	
+								<div class="w-1/4 max-h-50 condition_img" style="display: flex">
+									<img src="https://img.alicdn.com/imgextra/i4/O1CN01mQQUsc1FY89TBCilP_!!6000000000498-1-tps-448-256.gif" />
+									<!-- <img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/> -->
+								</div>
+								
+								<figcaption>
+									<h4 class="tm-gallery-title">Text + Sketch</h4>
+									<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+									<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+									<p class="tm-gallery-description" style="font-size:12px; ">"Young african american woman talking on the smartphone and using credit card at street"</p>
+								</figcaption>
+							</figure>
+						</article>
+
+						<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+							<figure>
+								<div class="">
+									<img src="https://img.alicdn.com/imgextra/i3/O1CN01mlxVKO28jr9xDrVHf_!!6000000007969-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+								</div>	
+								<div class="w-1/4 max-h-50 condition_img" style="display: flex">
+									<img src="https://img.alicdn.com/imgextra/i4/O1CN01pdwHq529rTMMEKCHv_!!6000000008121-1-tps-448-256.gif"/>
+									<!-- <img src="https://gw.alicdn.com/imgextra/i1/O1CN01ciYGVl1jqqkMREpbh_!!6000000004600-0-tps-336-336.jpg"/>
+									<img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/>
+									<img src="https://gw.alicdn.com/imgextra/i2/O1CN01xyKJaa1M45PqNmJZK_!!6000000001380-2-tps-256-256.png"/> -->
+								</div>
+								<figcaption>
+									<h4 class="tm-gallery-title">Text + Sketch</h4>
+									<!-- <h4 class="tm-gallery-title">Style + Depth + Sketch + Motions</h4> -->
+									<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+									<p class="tm-gallery-description" style="font-size:9px; ">"Close up to male face of young farmer examining his golden wheat field. Young agronomist standing on barley meadow and enjoying his cereal plantation. Concept of agricultural business. Slow motion"</p>
+								</figcaption>
+							</figure>
+						</article>
+
+						<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+							<figure>
+								<div class="">
+									<img src="https://img.alicdn.com/imgextra/i2/O1CN01D1AzIk1RHR6SHXU41_!!6000000002086-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+								</div>	
+								<div class="w-1/4 max-h-50 condition_img" style="display: flex">
+									<img src="https://img.alicdn.com/imgextra/i3/O1CN01lgueRw1IHahASkaxM_!!6000000000868-1-tps-448-256.gif"/>
+									<!-- <img src="https://gw.alicdn.com/imgextra/i1/O1CN01lMhWYo1KD802vVUtK_!!6000000001129-0-tps-338-338.jpg"/> -->
+								</div>
+								<figcaption>
+									<h4 class="tm-gallery-title">Text + Sketch</h4>
+									<!-- <h4 class="tm-gallery-title">Style + Hand-crafted Sketch + Hand-crafted motions</h4> -->
+									<p class="tm-gallery-description" style="font-size:9px; ">"Close up portrait A beautiful young girl in a white T-shirt is chatting in social networks on her smartphone while sitting on a bench in a park"</p>
+								</figcaption>
+							</figure>
+						</article>
+					</div> <!-- gallery page 1 -->
+				</div>
+
+
+
+
+				<!-- motion vector-to-video -->
+				<!-- Gallery -->
+				<div class="row tm-gallery">
+					<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+						<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+							<figure>
+								<div class="">
+									<img src="https://img.alicdn.com/imgextra/i1/O1CN010fPmae1e11vBBboeI_!!6000000003810-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+								</div>	
+								<div class="w-1/4 max-h-50 condition_img">
+									<img src="https://img.alicdn.com/imgextra/i4/O1CN01IPq9j31ZXTuAODlNe_!!6000000003204-1-tps-630-360.gif"/>
+								</div>
+								<figcaption>
+									<h4 class="tm-gallery-title">Text + Motion vectors</h4>
+									<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+									<p class="tm-gallery-description" style="font-size:9px; ">“Casual Joyful South American man checking smartphone walking in city street in daylight. Smiling hispanic person using phone”</p>
+								</figcaption>
+							</figure>
+						</article>
+
+						<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+							<figure>
+								<div class="">
+									<img src="https://img.alicdn.com/imgextra/i1/O1CN01LPc2Dw1p4CQzPFtAe_!!6000000005306-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+								</div>	
+								<div class="w-1/4 max-h-50 condition_img" style="display: flex">
+									<img src="https://img.alicdn.com/imgextra/i3/O1CN013KHAMG1s9dzPcHENY_!!6000000005724-1-tps-630-360.gif" />
+									<!-- <img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/> -->
+								</div>
+								
+								<figcaption>
+									<h4 class="tm-gallery-title">Text + Motion vectors</h4>
+									<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+									<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+									<p class="tm-gallery-description" style="font-size:12px; ">"A young spotted hyena at its den, Kruger National Park, South Africa"</p>
+								</figcaption>
+							</figure>
+						</article>
+
+						<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+							<figure>
+								<div class="">
+									<img src="https://img.alicdn.com/imgextra/i4/O1CN01247ggm1C2a1EDi8PR_!!6000000000023-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+								</div>	
+								<div class="w-1/4 max-h-50 condition_img" style="display: flex">
+									<img src="https://img.alicdn.com/imgextra/i3/O1CN01PSH6TH1gas9CnUieW_!!6000000004159-1-tps-630-360.gif"/>
+									<!-- <img src="https://gw.alicdn.com/imgextra/i1/O1CN01ciYGVl1jqqkMREpbh_!!6000000004600-0-tps-336-336.jpg"/>
+									<img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/>
+									<img src="https://gw.alicdn.com/imgextra/i2/O1CN01xyKJaa1M45PqNmJZK_!!6000000001380-2-tps-256-256.png"/> -->
+								</div>
+								<figcaption>
+									<h4 class="tm-gallery-title">Text + Motion vectors</h4>
+									<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+									<p class="tm-gallery-description" style="font-size:12px; ">"Working from home - chroma key screen on the laptop"</p>
+								</figcaption>
+							</figure>
+						</article>
+
+						<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+							<figure>
+								<div class="">
+									<img src="https://img.alicdn.com/imgextra/i4/O1CN01NkpvSW28nyiw0zu95_!!6000000007978-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+								</div>	
+								<div class="w-1/4 max-h-50 condition_img" style="display: flex">
+									<img src="https://img.alicdn.com/imgextra/i3/O1CN01HOkD5g1NZyftQtwoi_!!6000000001585-1-tps-630-360.gif"/>
+									<!-- <img src="https://gw.alicdn.com/imgextra/i1/O1CN01lMhWYo1KD802vVUtK_!!6000000001129-0-tps-338-338.jpg"/> -->
+								</div>
+								<figcaption>
+									<h4 class="tm-gallery-title">Text + Motion vectors</h4>
+									<!-- <h4 class="tm-gallery-title">Style + Hand-crafted Sketch + Hand-crafted motions</h4> -->
+									<p class="tm-gallery-description" style="font-size:12px; ">"Executives discussing over laptop 4k"</p>
+								</figcaption>
+							</figure>
+						</article>
+					</div> <!-- gallery page 1 -->
+				</div>
+
+
+			</div>
+		<!-- </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <!-- gray_div -->
+		<div class="gray_div font-serif rw-r-container">
+			<div class="text-2xl lg:text-4xl leading-none pb-2 text-center">
+				Ability 4: <i>Compositional Video Synthesis (Resolution >= 1280x640)</i>
+			</div>
+			<div class="text-base lg:text-lg pb-5 text-center ">
+				You can generate high-resolution videos that are consistent with the input structure guidance.
+			</div>
+			
+
+			<!-- Depth-to-video -->
+			<!-- Gallery -->
+			<div class="row tm-gallery">
+				<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+					<!-- <article class="ccol-sm-6 tm-gallery-item"> -->
+						<figure>
+							<!-- <div class=""> -->
+							<div class="" style="display: flex; justify-content: center; align-items: center; margin-right: 20px;" >
+								<img src="https://img.alicdn.com/imgextra/i3/O1CN01DQ0UFi1NsIW6VhVYN_!!6000000001625-1-tps-1280-768.gif" alt="Image" class="img-fluid tm-gallery-img" width="100%" />
+								<!-- <img src="https://img.alicdn.com/imgextra/i3/O1CN01fMn7Mq1l8XjAD0ZtX_!!6000000004774-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" /> -->
+							</div>	
+							<div class="w-1/4 max-h-50 condition_img">
+								<!-- style="margin-right: 5%;" -->
+								<img src="https://img.alicdn.com/imgextra/i2/O1CN01ASubgA1RA6lQgD2v4_!!6000000002070-1-tps-1280-768.gif" />
+							</div>
+							<figcaption>
+								<h4 class="tm-gallery-title">Text + Depth</h4>
+								<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+								<p class="tm-gallery-description" style="font-size:12px; ">“Blue 3D numbers growing up”</p>
+							</figcaption>
+						</figure>
+					<!-- </article> -->
+
+					<!-- <article class="col-sm-6 tm-gallery-item"> -->
+						<figure>
+							<!-- <div class=""> -->
+							<div class="" style="display: flex; justify-content: center; align-items: center; margin-right: 20px;" >
+								<img src="https://img.alicdn.com/imgextra/i3/O1CN01txtBum1bAF2ZJSh1v_!!6000000003424-1-tps-1280-768.gif" alt="Image" class="img-fluid tm-gallery-img" width="100%" />
+								<!-- <img src="https://img.alicdn.com/imgextra/i3/O1CN01fMn7Mq1l8XjAD0ZtX_!!6000000004774-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" /> -->
+							</div>	
+							<div class="w-1/4 max-h-50 condition_img">
+								<img src="https://img.alicdn.com/imgextra/i2/O1CN01joI4Ia28KfNHPBaot_!!6000000007914-1-tps-1280-768.gif"/>
+							</div>
+							<figcaption>
+								<h4 class="tm-gallery-title">Text + Sketch</h4>
+								<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+								<p class="tm-gallery-description " style="font-size:9px; ">“Absorbed African American happy man reading book lying on bed at home indoors. Portrait of smart confident relaxed guy enjoying hobby in the evening in bedroom. Lifestyle and joy concept”</p>
+							</figcaption>
+						</figure>
+					<!-- </article> -->
+
+					
+				</div> <!-- gallery page 1 -->
+			</div>
+
+
+
+
+			<div class="row tm-gallery">
+				<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+					<!-- <article class="ccol-sm-6 tm-gallery-item"> -->
+						<figure>
+							<!-- <div class=""> -->
+							<div class="" style="display: flex; justify-content: center; align-items: center; margin-right: 20px;" >
+								<img src="https://img.alicdn.com/imgextra/i1/O1CN01JotNAB1acLjL6HTaE_!!6000000003350-1-tps-1280-640.gif" alt="Image" class="img-fluid tm-gallery-img" width="100%" />
+								<!-- <img src="https://img.alicdn.com/imgextra/i3/O1CN01fMn7Mq1l8XjAD0ZtX_!!6000000004774-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" /> -->
+							</div>	
+							<div class="w-1/4 max-h-50 condition_img">
+								<!-- style="margin-right: 5%;" -->
+								<img src="https://img.alicdn.com/imgextra/i1/O1CN011Dnums26VzwZ3SZ3Q_!!6000000007668-1-tps-1280-640.gif" />
+							</div>
+							<figcaption>
+								<h4 class="tm-gallery-title">Text + Sketch</h4>
+								<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+								<p class="tm-gallery-description" style="font-size:12px; ">“A model with long hair, 30-35 years old, wearing a hat and sunglasses.”</p>
+							</figcaption>
+						</figure>
+					<!-- </article> -->
+
+					<!-- <article class="col-sm-6 tm-gallery-item"> -->
+						<figure>
+							<!-- <div class=""> -->
+							<div class="" style="display: flex; justify-content: center; align-items: center; margin-right: 20px;" >
+								<img src="https://img.alicdn.com/imgextra/i2/O1CN01sHt2nZ1W58XvGu8pZ_!!6000000002736-1-tps-1280-640.gif" alt="Image" class="img-fluid tm-gallery-img" width="100%" />
+								<!-- <img src="https://img.alicdn.com/imgextra/i3/O1CN01fMn7Mq1l8XjAD0ZtX_!!6000000004774-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" /> -->
+							</div>	
+							<div class="w-1/4 max-h-50 condition_img">
+								<img src="https://img.alicdn.com/imgextra/i3/O1CN01i1eKFk1C3xCwzf1Jb_!!6000000000026-1-tps-1280-640.gif"/>
+							</div>
+							<figcaption>
+								<h4 class="tm-gallery-title">Text + Depth</h4>
+								<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+								<p class="tm-gallery-description " style="font-size:12px; ">“Young blonde woman with serious expression standing at street”</p>
+							</figcaption>
+						</figure>
+					<!-- </article> -->
+
+					
+				</div> <!-- gallery page 1 -->
+			</div>
+
+
+
+			<div class="row tm-gallery">
+				<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+					<!-- <article class="ccol-sm-6 tm-gallery-item"> -->
+						<figure>
+							<!-- <div class=""> -->
+							<div class="" style="display: flex; justify-content: center; align-items: center; margin-right: 20px;" >
+								<img src="https://img.alicdn.com/imgextra/i2/O1CN010ZzSWm1wJ2a18i0nr_!!6000000006286-1-tps-1280-640.gif" alt="Image" class="img-fluid tm-gallery-img" width="100%" />
+								<!-- <img src="https://img.alicdn.com/imgextra/i3/O1CN01fMn7Mq1l8XjAD0ZtX_!!6000000004774-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" /> -->
+							</div>	
+							<div class="w-1/4 max-h-50 condition_img">
+								<!-- style="margin-right: 5%;" -->
+								<img src="https://img.alicdn.com/imgextra/i1/O1CN01uOhIRW1VyGbe5aBIL_!!6000000002721-1-tps-1280-640.gif" />
+							</div>
+							<figcaption>
+								<h4 class="tm-gallery-title">Text + Sketch</h4>
+								<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+								<p class="tm-gallery-description" style="font-size:12px; ">“Close-up of chess on a black background. Wooden chess pieces. Concept: the Board game and the intellectual activities”</p>
+							</figcaption>
+						</figure>
+					<!-- </article> -->
+
+					<!-- <article class="col-sm-6 tm-gallery-item"> -->
+						<figure>
+							<!-- <div class=""> -->
+							<div class="" style="display: flex; justify-content: center; align-items: center; margin-right: 20px;" >
+								<img src="https://img.alicdn.com/imgextra/i2/O1CN01pKIsR71HUaJiJKKtB_!!6000000000761-1-tps-1280-640.gif" alt="Image" class="img-fluid tm-gallery-img" width="100%" />
+								<!-- <img src="https://img.alicdn.com/imgextra/i3/O1CN01fMn7Mq1l8XjAD0ZtX_!!6000000004774-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" /> -->
+							</div>	
+							<div class="w-1/4 max-h-50 condition_img">
+								<img src="https://img.alicdn.com/imgextra/i1/O1CN01SGaOQG1beTBFczLQV_!!6000000003490-1-tps-1280-640.gif"/>
+							</div>
+							<figcaption>
+								<h4 class="tm-gallery-title">Text + Sketch</h4>
+								<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+								<p class="tm-gallery-description " style="font-size:12px; ">“CU Owl perching on stares tree / Winnipeg, Manitoba, Canada”</p>
+							</figcaption>
+						</figure>
+					<!-- </article> -->
+
+					
+				</div> <!-- gallery page 1 -->
+			</div>
+
+
+		</div>
+
+
+
+
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<!-- gray_div -->
+		<div class=" font-serif rw-r-container">
+			<div class="text-2xl lg:text-4xl leading-none pb-2 text-center">
+				 <i>Evaluation on semi-supervised setting</i>
+			</div>
+			<div class="text-base lg:text-lg pb-5 text-center ">
+				In the semi-supervised setting, you can generate videos that follow the motion-related text.
+			</div>
+			
+
+			<!-- Depth-to-video -->
+			<!-- Gallery -->
+			<div class="row tm-gallery">
+				<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+					<!-- <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item"> -->
+						<div class="text-base lg:text-lg pb-5 text-center " style="margin-top: 90px; margin-right: 20px;">
+							ModelScopeT2V
+						</div>
+						<figure>
+							<div class="" style="margin-right: 40px; margin-left: 40px;">
+								<img src="https://img.alicdn.com/imgextra/i3/O1CN01R1Ysqw277YQ5HamAD_!!6000000007750-1-tps-256-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+							</div>	
+							<!-- <figcaption> -->
+								<!-- <h4 class="tm-gallery-title">Text + Depth</h4> -->
+								<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+								<!-- <p class="tm-gallery-description" style="font-size:12px; ">“Charming young girl with flowers.”</p>
+							</figcaption> -->
+							<!-- <div class="w-1/4 max-h-50 condition_img">
+								<img src="https://img.alicdn.com/imgextra/i3/O1CN01sQgmSZ1X7Fzj9RwRd_!!6000000002876-1-tps-448-256.gif"/>
+							</div> -->
+							<!-- <figcaption> -->
+								<!-- <h4 class="tm-gallery-title">Text + Depth</h4> -->
+								<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+								<!-- <p class="tm-gallery-description" style="font-size:12px; ">“Charming young girl with flowers.”</p>
+							</figcaption> -->
+						</figure>
+					<!-- </article> -->
+
+					<!-- <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item"> -->
+						<figure>
+							<div class="" style="margin-right: 40px; margin-left: 40px;"> 
+								<img src="https://img.alicdn.com/imgextra/i1/O1CN01OHIbrd1JJi95IlTGT_!!6000000001008-1-tps-256-256.gif" alt="Image" class="img-fluid tm-gallery-img"  />
+							</div>	
+							<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+								<img src="https://img.alicdn.com/imgextra/i2/O1CN01xZ5hHU25M5lExh2vN_!!6000000007511-1-tps-448-256.gif" /> -->
+								<!-- <img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/> -->
+							<!-- </div> -->
+							
+							<!-- <figcaption> -->
+								<!-- <h4 class="tm-gallery-title">Text + Depth</h4> -->
+								<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+								<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+								<!-- <p class="tm-gallery-description" style="font-size:12px; ">"Close up of a young girl drawing on a chalkboard"</p>
+							</figcaption> -->
+						</figure>
+					<!-- </article> -->
+
+					<!-- <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item"> -->
+						<figure>
+							<div class="" style="margin-right: 40px;  margin-left: 40px;">
+								<img src="https://img.alicdn.com/imgextra/i2/O1CN01xCNJqC1U2jEOuRT1h_!!6000000002460-1-tps-256-256.gif" alt="Image" class="img-fluid tm-gallery-img"  />
+							</div>	
+							
+						</figure>
+					<!-- </article> -->
+
+					<!-- <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item"> -->
+						<figure>
+							<div class="" style="margin-right: 40px; margin-left: 40px;">
+								<img src="https://img.alicdn.com/imgextra/i4/O1CN012E4jIV1k7L4TKjLG4_!!6000000004636-1-tps-256-256.gif" alt="Image" class="img-fluid tm-gallery-img"  />
+							</div>	
+						
+						</figure>
+					<!-- </article> -->
+				</div> <!-- gallery page 1 -->
+			</div>
+
+
+
+
+            <div class="row tm-gallery">
+				<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+					<!-- <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item"> -->
+						<div class="text-base lg:text-lg pb-5 text-center " style="margin-top: 50px; margin-right: 70px;">
+							ZeroScope
+						</div>
+						<figure>
+							<div class="" >
+								<img src="https://img.alicdn.com/imgextra/i4/O1CN01V5w5YT1e4Eh9bj6QL_!!6000000003817-1-tps-576-320.gif" alt="Image" class="img-fluid tm-gallery-img" />
+							</div>	
+							<!-- <figcaption> -->
+								<!-- <h4 class="tm-gallery-title">Text + Depth</h4> -->
+								<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+								<!-- <p class="tm-gallery-description" style="font-size:12px; ">“Charming young girl with flowers.”</p>
+							</figcaption> -->
+							<!-- <div class="w-1/4 max-h-50 condition_img">
+								<img src="https://img.alicdn.com/imgextra/i3/O1CN01sQgmSZ1X7Fzj9RwRd_!!6000000002876-1-tps-448-256.gif"/>
+							</div> -->
+							<!-- <figcaption> -->
+								<!-- <h4 class="tm-gallery-title">Text + Depth</h4> -->
+								<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+								<!-- <p class="tm-gallery-description" style="font-size:12px; ">“Charming young girl with flowers.”</p>
+							</figcaption> -->
+						</figure>
+					<!-- </article> -->
+
+					<!-- <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item"> -->
+						<figure>
+							<div class="" > 
+								<img src="https://img.alicdn.com/imgextra/i3/O1CN01Pv0XR6211FGpPBXuQ_!!6000000006924-1-tps-576-320.gif" alt="Image" class="img-fluid tm-gallery-img"  />
+							</div>	
+							<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+								<img src="https://img.alicdn.com/imgextra/i2/O1CN01xZ5hHU25M5lExh2vN_!!6000000007511-1-tps-448-256.gif" /> -->
+								<!-- <img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/> -->
+							<!-- </div> -->
+							
+							<!-- <figcaption> -->
+								<!-- <h4 class="tm-gallery-title">Text + Depth</h4> -->
+								<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+								<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+								<!-- <p class="tm-gallery-description" style="font-size:12px; ">"Close up of a young girl drawing on a chalkboard"</p>
+							</figcaption> -->
+						</figure>
+					<!-- </article> -->
+
+					<!-- <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item"> -->
+						<figure>
+							<div class="" >
+								<img src="https://img.alicdn.com/imgextra/i2/O1CN01AkKXiM1FmKQiv8FWL_!!6000000000529-1-tps-576-320.gif" alt="Image" class="img-fluid tm-gallery-img"  />
+							</div>	
+							
+						</figure>
+					<!-- </article> -->
+
+					<!-- <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item"> -->
+						<figure>
+							<div class="" >
+								<img src="https://img.alicdn.com/imgextra/i4/O1CN01yaMtOR1xajUquy5TH_!!6000000006460-1-tps-576-320.gif" alt="Image" class="img-fluid tm-gallery-img"  />
+							</div>	
+						
+						</figure>
+					<!-- </article> -->
+				</div> <!-- gallery page 1 -->
+			</div>
+			
+			
+
+
+
+
+
+
+			<div class="row tm-gallery">
+				<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+					<!-- <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item"> -->
+						<div class="text-base lg:text-lg pb-5 text-center " style="margin-top: 90px; margin-right: 50px;">
+							AnimateDiff
+						</div>
+						<figure>
+							<div class="" style="margin-right: 40px; margin-left: 40px;">
+								<img src="https://img.alicdn.com/imgextra/i1/O1CN01pfs28j1dMj4Gbxyec_!!6000000003722-1-tps-512-512.gif" alt="Image" class="img-fluid tm-gallery-img" />
+							</div>	
+							<!-- <figcaption> -->
+								<!-- <h4 class="tm-gallery-title">Text + Depth</h4> -->
+								<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+								<!-- <p class="tm-gallery-description" style="font-size:12px; ">“Charming young girl with flowers.”</p>
+							</figcaption> -->
+							<!-- <div class="w-1/4 max-h-50 condition_img">
+								<img src="https://img.alicdn.com/imgextra/i3/O1CN01sQgmSZ1X7Fzj9RwRd_!!6000000002876-1-tps-448-256.gif"/>
+							</div> -->
+							<!-- <figcaption> -->
+								<!-- <h4 class="tm-gallery-title">Text + Depth</h4> -->
+								<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+								<!-- <p class="tm-gallery-description" style="font-size:12px; ">“Charming young girl with flowers.”</p>
+							</figcaption> -->
+						</figure>
+					<!-- </article> -->
+
+					<!-- <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item"> -->
+						<figure>
+							<div class="" style="margin-right: 40px; margin-left: 40px;"> 
+								<img src="https://img.alicdn.com/imgextra/i1/O1CN01g4kk2e1McRBdWaGSW_!!6000000001455-1-tps-512-512.gif" alt="Image" class="img-fluid tm-gallery-img"  />
+							</div>	
+							<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+								<img src="https://img.alicdn.com/imgextra/i2/O1CN01xZ5hHU25M5lExh2vN_!!6000000007511-1-tps-448-256.gif" /> -->
+								<!-- <img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/> -->
+							<!-- </div> -->
+							
+							<!-- <figcaption> -->
+								<!-- <h4 class="tm-gallery-title">Text + Depth</h4> -->
+								<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+								<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+								<!-- <p class="tm-gallery-description" style="font-size:12px; ">"Close up of a young girl drawing on a chalkboard"</p>
+							</figcaption> -->
+						</figure>
+					<!-- </article> -->
+
+					<!-- <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item"> -->
+						<figure>
+							<div class="" style="margin-right: 40px;  margin-left: 40px;">
+								<img src="https://img.alicdn.com/imgextra/i2/O1CN01icYNEM1O6xByoJ8IB_!!6000000001657-1-tps-512-512.gif" alt="Image" class="img-fluid tm-gallery-img"  />
+							</div>	
+							
+						</figure>
+					<!-- </article> -->
+
+					<!-- <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item"> -->
+						<figure>
+							<div class="" style="margin-right: 40px; margin-left: 40px;">
+								<img src="https://img.alicdn.com/imgextra/i2/O1CN01w5DGsH1JYMooCXHwM_!!6000000001040-1-tps-512-512.gif" alt="Image" class="img-fluid tm-gallery-img"  />
+							</div>	
+						
+						</figure>
+					<!-- </article> -->
+				</div> <!-- gallery page 1 -->
+			</div>
+			
+			
+
+
+
+			<div class="row tm-gallery">
+				<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+					<!-- <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item"> -->
+						<div class="text-base lg:text-lg pb-5 text-center " style="margin-top: 50px; margin-right: 48px; font-size: 1;">
+							VideoCrafter 
+							
+						</div>
+						<figure>
+							<div class="" >
+								<img src="https://img.alicdn.com/imgextra/i1/O1CN01T7IPff1PaYPG8UiUB_!!6000000001857-1-tps-1024-576.gif" alt="Image" class="img-fluid tm-gallery-img" />
+							</div>	
+							<!-- <figcaption> -->
+								<!-- <h4 class="tm-gallery-title">Text + Depth</h4> -->
+								<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+								<!-- <p class="tm-gallery-description" style="font-size:12px; ">“Charming young girl with flowers.”</p>
+							</figcaption> -->
+							<!-- <div class="w-1/4 max-h-50 condition_img">
+								<img src="https://img.alicdn.com/imgextra/i3/O1CN01sQgmSZ1X7Fzj9RwRd_!!6000000002876-1-tps-448-256.gif"/>
+							</div> -->
+							<!-- <figcaption> -->
+								<!-- <h4 class="tm-gallery-title">Text + Depth</h4> -->
+								<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+								<!-- <p class="tm-gallery-description" style="font-size:12px; ">“Charming young girl with flowers.”</p>
+							</figcaption> -->
+						</figure>
+					<!-- </article> -->
+
+					<!-- <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item"> -->
+						<figure>
+							<div class="" > 
+								<img src="https://img.alicdn.com/imgextra/i3/O1CN01tU1ffU1k7L4U36xDB_!!6000000004636-1-tps-1024-576.gif" alt="Image" class="img-fluid tm-gallery-img"  />
+							</div>	
+							<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+								<img src="https://img.alicdn.com/imgextra/i2/O1CN01xZ5hHU25M5lExh2vN_!!6000000007511-1-tps-448-256.gif" /> -->
+								<!-- <img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/> -->
+							<!-- </div> -->
+							
+							<!-- <figcaption> -->
+								<!-- <h4 class="tm-gallery-title">Text + Depth</h4> -->
+								<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+								<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+								<!-- <p class="tm-gallery-description" style="font-size:12px; ">"Close up of a young girl drawing on a chalkboard"</p>
+							</figcaption> -->
+						</figure>
+					<!-- </article> -->
+
+					<!-- <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item"> -->
+						<figure>
+							<div class="" >
+								<img src="https://img.alicdn.com/imgextra/i4/O1CN01n62WVC1GcXa6OlIw1_!!6000000000643-1-tps-1024-576.gif" alt="Image" class="img-fluid tm-gallery-img"  />
+							</div>	
+							
+						</figure>
+					<!-- </article> -->
+
+					<!-- <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item"> -->
+						<figure>
+							<div class="" >
+								<img src="https://img.alicdn.com/imgextra/i2/O1CN01qUT5Oe1SVvFLilXfV_!!6000000002253-1-tps-1024-576.gif" alt="Image" class="img-fluid tm-gallery-img"  />
+							</div>	
+						
+						</figure>
+					<!-- </article> -->
+				</div> <!-- gallery page 1 -->
+			</div>
+
+
+
+
+
+
+			<div class="row tm-gallery">
+				<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+					<!-- <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item"> -->
+						<div class="text-base lg:text-lg pb-5 text-center " style="margin-top: 20px; margin-right: 60px;">
+							TF-T2V <br/> (Language-free)
+						</div>
+						<figure>
+							<div class="" >
+								<img src="https://img.alicdn.com/imgextra/i1/O1CN01MkT2qo1mgiu0UuAVh_!!6000000004984-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+							</div>	
+							<!-- <figcaption> -->
+								<!-- <h4 class="tm-gallery-title">Text + Depth</h4> -->
+								<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+								<!-- <p class="tm-gallery-description" style="font-size:12px; ">“Charming young girl with flowers.”</p>
+							</figcaption> -->
+							<!-- <div class="w-1/4 max-h-50 condition_img">
+								<img src="https://img.alicdn.com/imgextra/i3/O1CN01sQgmSZ1X7Fzj9RwRd_!!6000000002876-1-tps-448-256.gif"/>
+							</div> -->
+							<!-- <figcaption> -->
+								<!-- <h4 class="tm-gallery-title">Text + Depth</h4> -->
+								<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+								<!-- <p class="tm-gallery-description" style="font-size:12px; ">“Charming young girl with flowers.”</p>
+							</figcaption> -->
+						</figure>
+					<!-- </article> -->
+
+					<!-- <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item"> -->
+						<figure>
+							<div class="" > 
+								<img src="https://img.alicdn.com/imgextra/i4/O1CN01cDyffU1oSdxYXXnx4_!!6000000005224-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img"  />
+							</div>	
+							<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+								<img src="https://img.alicdn.com/imgextra/i2/O1CN01xZ5hHU25M5lExh2vN_!!6000000007511-1-tps-448-256.gif" /> -->
+								<!-- <img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/> -->
+							<!-- </div> -->
+							
+							<!-- <figcaption> -->
+								<!-- <h4 class="tm-gallery-title">Text + Depth</h4> -->
+								<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+								<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+								<!-- <p class="tm-gallery-description" style="font-size:12px; ">"Close up of a young girl drawing on a chalkboard"</p>
+							</figcaption> -->
+						</figure>
+					<!-- </article> -->
+
+					<!-- <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item"> -->
+						<figure>
+							<div class="" >
+								<img src="https://img.alicdn.com/imgextra/i1/O1CN01fQnph61qkcjsb1Lbv_!!6000000005534-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img"  />
+							</div>	
+							
+						</figure>
+					<!-- </article> -->
+
+					<!-- <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item"> -->
+						<figure>
+							<div class="" >
+								<img src="https://img.alicdn.com/imgextra/i3/O1CN011Ns9yD29dH5Ft4Y8K_!!6000000008090-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img"  />
+							</div>	
+						
+						</figure>
+					<!-- </article> -->
+				</div> <!-- gallery page 1 -->
+			</div>
+
+
+
+
+
+
+
+
+
+
+			<div class="row tm-gallery">
+				<div id="tm-gallery-page-pizza" class="tm-gallery-page" >
+					<!-- <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item"> -->
+						<div class="text-base lg:text-lg pb-5 text-center " style="margin-top: 20px; margin-right: 60px; color: red;">
+							TF-T2V <br/> (Semi-supervised)
+						</div>
+						<figure>
+							<div class="">
+								<img src="https://img.alicdn.com/imgextra/i2/O1CN01NNsBKD1wI7muOwcPQ_!!6000000006284-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+							</div>	
+							<figcaption>
+								<!-- <h4 class="tm-gallery-title">Text + Depth</h4> -->
+								<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+								<p class="tm-gallery-description" style="font-size:12px; ">“A dog is <span>running away</span> from the camera”</p>
+								<style>
+									span {
+										color: red;
+									}
+								</style>
+							</figcaption>
+							<!-- <div class="w-1/4 max-h-50 condition_img">
+								<img src="https://img.alicdn.com/imgextra/i3/O1CN01sQgmSZ1X7Fzj9RwRd_!!6000000002876-1-tps-448-256.gif"/>
+							</div> -->
+							<!-- <figcaption> -->
+								<!-- <h4 class="tm-gallery-title">Text + Depth</h4> -->
+								<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+								<!-- <p class="tm-gallery-description" style="font-size:12px; ">“Charming young girl with flowers.”</p>
+							</figcaption> -->
+						</figure>
+					<!-- </article> -->
+
+					<!-- <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item"> -->
+						<figure>
+							<div class="">
+								<img src="https://img.alicdn.com/imgextra/i2/O1CN01bYa5GT1FLlSW5J88g_!!6000000000471-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+							</div>	
+							<figcaption>
+								<!-- <h4 class="tm-gallery-title">Text + Depth</h4> -->
+								<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+								<p class="tm-gallery-description" style="font-size:12px; ">“A man is running <span>from right to left</span>”</p>
+								<style>
+									span {
+										color: red;
+									}
+								</style>
+							</figcaption>
+							<!-- <div class="w-1/4 max-h-50 condition_img" style="display: flex">
+								<img src="https://img.alicdn.com/imgextra/i2/O1CN01xZ5hHU25M5lExh2vN_!!6000000007511-1-tps-448-256.gif" /> -->
+								<!-- <img src="https://gw.alicdn.com/imgextra/i4/O1CN01K3uzBK1VBG9z6BWeN_!!6000000002614-2-tps-256-256.png"/> -->
+							<!-- </div> -->
+							
+							<!-- <figcaption> -->
+								<!-- <h4 class="tm-gallery-title">Text + Depth</h4> -->
+								<!-- <h4 class="tm-gallery-title">Image + Depth</h4> -->
+								<!-- <p class="tm-gallery-description" style="color: darkgray;">None</p> -->
+								<!-- <p class="tm-gallery-description" style="font-size:12px; ">"Close up of a young girl drawing on a chalkboard"</p>
+							</figcaption> -->
+						</figure>
+					<!-- </article> -->
+
+					<!-- <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item"> -->
+						<figure>
+							<div class="">
+								<img src="https://img.alicdn.com/imgextra/i1/O1CN01OF7GiG21zF9lUGIuH_!!6000000007055-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+							</div>	
+							<figcaption>
+								<!-- <h4 class="tm-gallery-title">Text + Depth</h4> -->
+								<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+								<p class="tm-gallery-description" style="font-size:12px; ">“Beautiful peonies are <span>blooming</span> on a black background”</p>
+								<style>
+									span {
+										color: red;
+									}
+								</style>
+							</figcaption>
+							
+						</figure>
+					<!-- </article> -->
+
+					<!-- <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item"> -->
+						<figure>
+							<div class="">
+								<img src="https://img.alicdn.com/imgextra/i3/O1CN01oNOp7M1Drhqd277WV_!!6000000000270-1-tps-448-256.gif" alt="Image" class="img-fluid tm-gallery-img" />
+							</div>	
+							<figcaption>
+								<!-- <h4 class="tm-gallery-title">Text + Depth</h4> -->
+								<!-- <h4 class="tm-gallery-title">Text + Sketch</h4> -->
+								<p class="tm-gallery-description" style="font-size:12px; ">“A manor, a <span>rotating</span> view”</p>
+								<style>
+									span {
+										color: red;
+									}
+								</style>
+							</figcaption>
+						
+						</figure>
+					<!-- </article> -->
+				</div> <!-- gallery page 1 -->
+			</div>
+
+
+
+
+
+
+		</div>
+	<!-- </div> -->
+
+
+
+	<div class="gray_div font-serif rw-r-container">
+		<div class="text-2xl lg:text-4xl leading-none pb-2 text-center">
+			Extension: <i>VideoLCM based on TF-T2V</i>
+		</div>
+		<div class="text-base lg:text-lg pb-5 mb-6 text-center">
+			<!-- Synthesize videos in any style you can imagine using nothing but a text prompt. If you can say it, now you can see it. -->
+			<!-- You can generate videos flexibly in any style that you can imagine. -->
+			Efficient video generation based on TF-T2V, just four denoising steps for good results.
+		</div>
+		
+		<div class="video-style">
+			<center>
+				<video class="video-center" width="896" height="504" controls>
+					<source src="https://cloud.video.taobao.com/play/u/null/p/1/e/6/t/1/442442427703.mp4" type="video/mp4">
+				</video> 
+			</center> 
+		</div>
+		<div class="block_bottom">
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+	<!-- </div> -->
+
+
+
+
+
+
+			
+			
+		
+
+
+
+
+
+
+
+			<div class="tm-section tm-container-inner">
+				<div class="row">
+					<!-- <div class="col-md-6">
+						<figure class="tm-description-figure"> -->
+							<!-- <img src="../videocomposer_source/videos/Fig00_01_Logo_01.jpg" alt="Image" class="img-fluid" /> -->
+							<!-- <img src="https://gw.alicdn.com/imgextra/i3/O1CN01UFj80E23LyMSi4Ip3_!!6000000007240-0-tps-1071-456.jpg" alt="Image" class="img-fluid" /> -->
+						<!-- </figure>
+					</div>
+					<div class="col-md-6"> -->
+						<!-- <div class="tm-description-box">  -->
+							<h4 class="tm-gallery-title" style="font-size: 1.5rem;">References</h4>
+							<p class="tm-mb-45">
+								<p style="font-size: small; color: #556E5B; background-color: rgba(179, 181, 184, 0.205);">
+                                    @article{TFT2V,<br/>
+										&nbsp;title={A Recipe for Scaling up Text-to-Video Generation with Text-free Videos},<br/>
+										&nbsp;author={Wang, Xiang and Zhang, Shiwei and Yuan, Hangjie and Qing, Zhiwu and Gong, Biao and Zhang, Yingya and Shen, Yujun and Gao, Changxin and Sang, Nong},<br/>
+										&nbsp;journal={arXiv},<br/>
+										&nbsp;year={2023}<br/>
+									  }
+                                </p>
+                                <p style="font-size: small; color: #556E5B; background-color: rgba(179, 181, 184, 0.205);">
+                                    @article{wang2023videolcm,<br/>
+										&nbsp;title={Videolcm: Video latent consistency model},<br/>
+										&nbsp;author={Wang, Xiang and Zhang, Shiwei and Zhang, Han and Liu, Yu and Zhang, Yingya and Gao, Changxin and Sang, Nong},<br/>
+										&nbsp;journal={arXiv preprint arXiv:2312.09109},<br/>
+										&nbsp;year={2023}<br/>
+									  }
+								</p>
+								
+							</p>
+							<div>
+								<p class="tm-mb-45">
+								</p>
+							</div>
+							<!-- <div -->
+						<!-- </div> -->
+					<!-- </div> -->
+				</div>
+			</div>
+		</div>
+		</main>
+
+		<footer class="tm-footer text-center">
+			<p>Copyright &copy; HUST & Alibaba Group 
+            
+            | Author: <a rel="nofollow">Xiang Wang</a></p>
+		</footer>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/parallax.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			// Handle click on paging links
+			$('.tm-paging-link').click(function(e){
+				e.preventDefault();
+				var page = $(this).text().toLowerCase();
+				$('.tm-gallery-page').addClass('hidden');
+				$('#tm-gallery-page-' + page).removeClass('hidden');
+				$('.tm-paging-link').removeClass('active');
+				$(this).addClass("active");
+			});
+		});
+	</script>
+</body>
+</html>
